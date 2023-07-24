@@ -145,7 +145,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
-                                        <span class="ml-2">Profile </span>
+                                        <span class="ml-2">{{ Auth::user()->name }} </span>
                                         <!-- bouton de connection -->
                                     </a>
                                     <form action="{{route('logout')}}" method="POST">
@@ -179,14 +179,15 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="../agence">Agence </li>
-                            <li><a href="../paiement">Paiements </li>
-                            <li><a href="../reservation">Reservations </li>
-                            <li><a href="../reservation_vehicule">Reservation_vehicules </li>
-                            <li><a href="../role">Roles </li>
-                            <li><a href="../type_vehicule">Type_vehicule </li>
-                            <li><a href="../user">users </li>
-                            <li><a href="../vehicule">Vehicules </li>
+                            <!-- pour bloquer l'acces a un utilisateur a certaine page -->
+                            <li><a href="../agence">Agence </a></li>
+                            <li><a href="../paiement">Paiements</a> </li>
+                            <li><a href="../reservation">Reservations </a></li>
+                            <li><a href="../reservation_vehicule">Reservation_vehicules </a></li>
+                            <li><a href="../role">Roles </a></li>
+                            <li><a href="../type_vehicule">Type_vehicule </a></a></li>
+                            <li><a href="../user">users </a></li>
+                            <li><a href="../vehicule">Vehicules </a></li>
                           
                         </ul>
                     </li>

@@ -98,7 +98,7 @@
 
 
     <!-- Search Start -->
-     <div class="container-fluid bg-white pt-3 px-lg-5">
+     <!-- <div class="container-fluid bg-white pt-3 px-lg-5">
         <div class="row mx-n2">
             <div class="col-xl-2 col-lg-4 col-md-6 px-2">
                 <a href="{{route('login')}}">
@@ -106,7 +106,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Search End  bien-->
 
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('mark');
             $table->string('model');
             $table->date('year_manifacturation');
-            $table->char('vehicle_image');
+            $table->char('vehicle_image')->unique();;
             $table->string('color');
             $table->string('transmission');
             $table->string('availability');

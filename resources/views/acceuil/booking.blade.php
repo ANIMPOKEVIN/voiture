@@ -125,25 +125,14 @@
                 <div class="col-lg-6 mb-4">
                     <h4 class="mb-2">{{ $vehicules->price_per_hour }}$/hour</h4>
                     <div class="d-flex mb-3">
-                        <h6 class="mr-2">Rating:</h6>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(250)</small>
-                        </div>
-                    </div>
-                    <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt</p>
-                    <div class="d-flex pt-1">
-                        <h6>Share on:</h6>
-                        <div class="d-inline-flex">
-                            <a class="px-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-pinterest"></i></a>
-                        </div>
+                        <h6 class="mr-2">Description du vehicule:</h6>
+                        <table>
+                        <tr>
+                            <td>
+                            {{ $type_vehicule->description }}  
+                            </td>
+                        </tr>
+                    </table>
                     </div>
                 </div>
             </div>
@@ -206,9 +195,11 @@
                         </div>
                         <div class="row">
                         <div class="col-6 form-group">
+                            <label>Date de début</label>
                                 <input type="date" class="form-control p-4" name="start_date" placeholder="date de debut" required="required">
                             </div>
                         <div class="col-6 form-group">
+                        <label>Date de fin</label>
                                 <input type="date" class="form-control p-4" name="end_date" placeholder="date de fin" required="required">
                             </div>    
                                        
@@ -267,7 +258,7 @@
 
 
     <!-- Footer Start -->
-    -->
+    
     <!-- <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
         <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
         <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>

@@ -142,7 +142,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
-                                        <span class="ml-2">Profile </span>
+                                        <span class="ml-2">{{ Auth::user()->name }} </span>
                                     </a>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
@@ -250,7 +250,7 @@
                                             </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix">
+                                                <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix par heur">
                                             </div>
                                            <div class="form-group">
                                                 <input type="date" class="form-control input-rounded" name="created" placeholder="created">
@@ -262,15 +262,16 @@
                                                 <input type="date" class="form-control input-rounded" name="deleted" placeholder="deleted">
                                             </div>  
                                             <!-- fonction pour appeler une clé etrangere dans la table -->
+                                            <input type="text" value="{{ Auth::user()->name }}" name="user_id" style="display: none;">
                                             <div class="card-body">
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <select class="form-control form-control-lg" name="user_id">
                                                         <option selected="selected">Selectionner un user</option>
                                                         @foreach ($user as $user)
                                                         <option value="{{$user->id}}" >{{$user->name}}</option>
                                                         @endforeach
                                                     </select>
-                                                </div>
+                                                </div> -->
                                                 <div class="card-body">
                                                 <div class="form-group">
                                                     <select class="form-control form-control-lg" name="agence_id">
@@ -290,7 +291,7 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-
+                                                <input type="text" value="{{ Auth::user()->name }}" name="user_id" style="display: none;">
 
                                                 <button type="submit" class="btn btn-primary">Ajouter</button>
                                         </form>
