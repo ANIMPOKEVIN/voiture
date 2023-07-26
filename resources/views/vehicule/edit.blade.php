@@ -40,19 +40,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="assets/images/logo.png" alt="">
-                <img class="logo-compact" src="assets/images/logo-text.png" alt="">
-                <img class="brand-title" src="assets/images/logo-text.png" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
+        @include('nav')
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -147,10 +135,6 @@
                                         <i class="icon-user"></i>
                                         <span class="ml-2">{{ Auth::user()->name }}</span>
                                     </a>
-                                    <a href="./email-inbox.html" class="dropdown-item">
-                                        <i class="icon-envelope-open"></i>
-                                        <span class="ml-2">Inbox </span>
-                                    </a>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary">
@@ -169,25 +153,11 @@
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
-
+       
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li> -->
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./index.html">Dashboard </a></li>
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @include('sider')
 
         <div class="content-body">
             <div class="container-fluid">
@@ -229,9 +199,9 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control input-rounded" value="{{$vehicule->model}}" name="model" placeholder="entrez le modele du vehicule">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input type="date" class="form-control input-rounded" value="{{$vehicule->year_manifacturation}}" name="year_manifacturation" placeholder="Annee de fabriquation">
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <input type="file" class="form-control input-rounded" value="{{$vehicule->vehicle_image}}" name="vehicle_image" placeholder="image du vehicule">
                                         </div>
@@ -251,7 +221,7 @@
                                         <div class="form-group">
                                             <input type="number" class="form-control input-rounded" value="{{$vehicule->price_per_hour}}" name="price_per_hour" placeholder="prix par jour">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input type="datetime" class="form-control input-rounded" value="{{$vehicule->created}}" name="created" placeholder="created">
                                         </div>
                                         <div class="form-group">
@@ -259,7 +229,7 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="datetime" class="form-control input-rounded" value="{{$vehicule->deleted}}" name="deleted" placeholder="deleted">
-                                        </div>
+                                        </div> -->
                                         <button type="submit" class="btn btn-primary">Ajouter</button>
 
                                     </form>
@@ -272,18 +242,9 @@
 
             </div>
         </div>
-
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-            </div>
-        </div>
-
-
-        
+        @include('footer')
 
     </div>
-    
     <script src="{{asset('assets/vendor/global/global.min.js')}}"></script>
     <script src="{{asset('assets/js/quixnav-init.js')}}"></script>
     <script src="{{asset('assets/js/custom.min.js')}}"></script>

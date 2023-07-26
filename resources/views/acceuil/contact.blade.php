@@ -83,7 +83,6 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="../" class="dropdown-item">Liste des véhicules</a>
-                                <a href="../" class="dropdown-item">Detail sur le véhicule</a>
                                 <a href="../" class="dropdown-item">Réservation de voiture</a>
                             </div>
                         </div>

@@ -28,6 +28,7 @@ class VehiculeController extends Controller
         $agence = agence::all();
         $type_vehicule = TypeVehicule::all();
         return view('vehicule.create', compact('type_vehicule','user','agence'));
+        
     }
 
     /**
@@ -40,13 +41,9 @@ class VehiculeController extends Controller
             'mark' => 'required',
             'model' => 'required',
             'vehicle_image' => 'required',
-            'year_manifacturation' => 'required',
             'transmission' => 'required',
             'availability' => 'required',
             'price_per_hour' => 'required',
-            'created' => 'required',
-            'modify' => 'required',
-            'deleted' => 'required',
             
             
         ]);
@@ -60,7 +57,7 @@ class VehiculeController extends Controller
         }
         
         Vehicule::create($data);
-        return redirect('vehicule');
+        return redirect('vehicule')->with('status', 'vehicule ajouter avec succes!');
     }
 
     /**
@@ -111,7 +108,7 @@ class VehiculeController extends Controller
     public function destroy(string $id)
     {
         vehicule::destroy($id);
-        return redirect('vehicule');
+        return redirect('vehicule')->with('status', 'vehicule supprimer avec succes!');
     }
 
 //route pour modifier le statut du vehicule

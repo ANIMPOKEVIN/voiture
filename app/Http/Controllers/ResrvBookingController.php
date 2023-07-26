@@ -28,6 +28,7 @@ class ResrvBookingController extends Controller
             'place_of_deposit' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
+            'status' => 'required',
         ]);
         $data = $request->all();
         reservation::create($data);

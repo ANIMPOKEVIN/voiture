@@ -40,19 +40,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="assets/images/logo.png" alt="">
-                <img class="logo-compact" src="assets/images/logo-text.png" alt="">
-                <img class="brand-title" src="assets/images/logo-text.png" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
+        @include('nav')
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -144,16 +132,16 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
-                                        <span class="ml-2">Profile </span>
-                                    </a>
-                                    <a href="./email-inbox.html" class="dropdown-item">
-                                        <i class="icon-envelope-open"></i>
-                                        <span class="ml-2">Inbox </span>
-                                    </a>
-                                    <a href="./page-login.html" class="dropdown-item">
-                                        <i class="icon-key"></i>
+                                        <span class="ml-2">{{ Auth::user()->name }} </span>
+                                    </a>                                
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button class="btn btn-primary">
+                                    <a href="#" class="dropdown-item">
                                         <span class="ml-2">Logout </span>
                                     </a>
+                                        </button>
+                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -168,23 +156,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li> -->
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./index.html">Dashboard </a></li>
-
-                        </ul>
-                    </li>
-
-
-                </ul>
-            </div>
-        </div>
+        @include('sider')
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -285,11 +257,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-    <div class="footer">
-        <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-        </div>
-    </div>
+        @include('footer')
     <!--**********************************
             Footer end
         ***********************************-->

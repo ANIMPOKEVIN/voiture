@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Focus - Bootstrap Admin Dashboard </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="icon" type="{{asset('assets/image/png')}}" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <!-- Custom Stylesheet -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
@@ -38,19 +38,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="./images/logo.png" alt="">
-                <img class="logo-compact" src="./images/logo-text.png" alt="">
-                <img class="brand-title" src="./images/logo-text.png" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
+        @include('nav')
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -147,9 +135,9 @@
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary">
-                                    <a href="#" class="dropdown-item">
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                            <a href="#" class="dropdown-item">
+                                                <span class="ml-2">Logout </span>
+                                            </a>
                                         </button>
                                     </form>
                                 </div>
@@ -166,23 +154,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li> -->
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./index.html">Dashboard </a></li>
-                          
-                        </ul>
-                    </li>
-
-                  
-                </ul>
-            </div>
-        </div>
+        @include('sider')
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -197,7 +169,14 @@
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
                             <span class="ml-1">Element</span>
+
+                            @if(session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                            @endif
                         </div>
+                        
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
@@ -211,23 +190,23 @@
                     <div class="row">
 
                         <div class="col-xl-6 col-xxl-12">
+
                             <div class="card">
+
                                 <div class="card-header">
+
                                     <h4 class="card-title">Ajouter un vehicule</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
                                         <form method="POST" action="{{url('vehicule')}}" enctype="multipart/form-data">
-                                             <!-- multipart important pour uploads les image -->
+                                            <!-- multipart important pour uploads les image -->
                                             @csrf
-                                             <div class="form-group">
+                                            <div class="form-group">
                                                 <input type="text" class="form-control input-default" name="mark" placeholder="entrez la mark">
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control input-rounded" name="model" placeholder="entrez le modele">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="date" class="form-control input-rounded" name="year_manifacturation" placeholder="entrez la date">
                                             </div>
                                             <div class="form-group">
                                                 <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
@@ -242,58 +221,38 @@
                                                     <option value="manuel">Manuel </option>
                                                 </select>
                                                 <div class="form-group">
-                                                <select class="form-control form-control-lg" name="availability">
-                                                    <option selected="selected">Selectionner le status</option>
-                                                    <option value="disponible">Disponible</option>
-                                                    <option value="non_disponible">Non disponible </option>
-                                                </select>
-                                            </div>
+                                                    <select class="form-control form-control-lg" name="availability">
+                                                        <option selected="selected">Selectionner le status</option>
+                                                        <option value="disponible">Disponible</option>
+                                                        <option value="non_disponible">Non disponible </option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix par heur">
                                             </div>
-                                           <div class="form-group">
-                                                <input type="date" class="form-control input-rounded" name="created" placeholder="created">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="date" class="form-control input-rounded" name="modify" placeholder="modify">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="date" class="form-control input-rounded" name="deleted" placeholder="deleted">
-                                            </div>  
-                                            <!-- fonction pour appeler une clé etrangere dans la table -->
-                                            <input type="text" value="{{ Auth::user()->name }}" name="user_id" style="display: none;">
-                                            <div class="card-body">
-                                                <!-- <div class="form-group">
-                                                    <select class="form-control form-control-lg" name="user_id">
-                                                        <option selected="selected">Selectionner un user</option>
-                                                        @foreach ($user as $user)
-                                                        <option value="{{$user->id}}" >{{$user->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div> -->
+                                            <!-- fonction pour appeler une clé etrangere dans la table -->                             
                                                 <div class="card-body">
-                                                <div class="form-group">
-                                                    <select class="form-control form-control-lg" name="agence_id">
-                                                        <option selected="selected">Selectionner une agence</option>
-                                                        <!-- la boucle foreach permet de recuperer les elements dans un tableau -->
-                                                        @foreach ($agence as $agence) 
-                                                        <option value="{{$agence->id}}" >{{$agence->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="card-body">
-                                                <div class="form-group">
-                                                    <select class="form-control form-control-lg" name="type_vehicule_id">
-                                                        <option selected="selected">Selectionner un type</option>
-                                                        @foreach ($type_vehicule as $type_vehicule)
-                                                        <option value="{{$type_vehicule->id}}" >{{$type_vehicule->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <input type="text" value="{{ Auth::user()->name }}" name="user_id" style="display: none;">
-
-                                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                                                    <div class="form-group">
+                                                        <select class="form-control form-control-lg" name="agence_id">
+                                                            <option selected="selected">Selectionner une agence</option>
+                                                            <!-- la boucle foreach permet de recuperer les elements dans un tableau -->
+                                                            @foreach ($agence as $agence)
+                                                            <option value="{{$agence->id}}">{{$agence->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="form-group">
+                                                            <select class="form-control form-control-lg" name="type_vehicule">
+                                                                <option selected="selected">Selectionner un type</option>
+                                                                @foreach ($type_vehicule as $type_vehicule)
+                                                                <option value="{{$type_vehicule->name}}">{{$type_vehicule->name}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <input type="text" value="{{ Auth::user()->id }}" name="user_id" style="display: none;">
+                                                        <button type="submit" class="btn btn-primary">Ajouter</button>
                                         </form>
                                     </div>
                                 </div>
@@ -313,11 +272,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-            </div>
-        </div>
+        @include('footer')
         <!--**********************************
             Footer end
         ***********************************-->

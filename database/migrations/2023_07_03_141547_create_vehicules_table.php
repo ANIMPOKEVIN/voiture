@@ -15,18 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('mark');
             $table->string('model');
-            $table->date('year_manifacturation');
+            //$table->date('year_manifacturation');
             $table->char('vehicle_image')->unique();;
             $table->string('color');
             $table->string('transmission');
             $table->string('availability');
             $table->integer('price_per_hour');
-            $table->dateTime('created');
-            $table->dateTime('modify');
-            $table->dateTime('deleted');
+            //$table->dateTime('created');
+            //$table->dateTime('modify');
+            //$table->dateTime('deleted');
             $table->foreignId('agence_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('type_vehicule_id')->constrained();
+            $table->string('type_vehicule');
             $table->timestamps();
         });
     }

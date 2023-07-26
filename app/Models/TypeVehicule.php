@@ -9,4 +9,5 @@ class TypeVehicule extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    
 }

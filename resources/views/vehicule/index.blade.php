@@ -40,19 +40,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="assets/images/logo.png" alt="">
-                <img class="logo-compact" src="assets/images/logo-text.png" alt="">
-                <img class="brand-title" src="assets/images/logo-text.png" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
+        @include('nav')
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -146,10 +134,6 @@
                                         <i class="icon-user"></i>
                                         <span class="ml-2">{{ Auth::user()->name }} </span>
                                     </a>
-                                    <a href="./email-inbox.html" class="dropdown-item">
-                                        <i class="icon-envelope-open"></i>
-                                        <span class="ml-2">Inbox </span>
-                                    </a>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary">
@@ -190,7 +174,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-
+        @include('sider')
         <!--**********************************
             Content body start
         ***********************************-->
@@ -233,7 +217,6 @@
                                                 <th>transmission</th>
                                                 <th>availability</th>
                                                 <th>price_per_hour</th>
-                                                <th>created</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -247,8 +230,7 @@
                                                 <td>{{$vehicule->color}}</td>
                                                 <td>{{$vehicule->transmission}}</td>
                                                 <td>{{$vehicule->availability}}</td>
-                                                <td>{{$vehicule->price_per_hour}}</td>                                               
-                                                <td>{{$vehicule->created}}</td>                                               
+                                                <td>{{$vehicule->price_per_hour}}</td>                                                                                             
                                                 <td>
                                                     <form method="POST" action="{{url('/vehicule/delete/' .$vehicule->id)}}">
                                                         {{method_field('DELETE')}}
@@ -287,11 +269,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-    <div class="footer">
-        <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-        </div>
-    </div>
+        @include('footer')
     <!--**********************************
             Footer end
         ***********************************-->

@@ -35,6 +35,7 @@ class UserController extends Controller
             'phone_number' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'user_id' => 'required',
         ]);
         $data = $request->all();
         user::create($data);

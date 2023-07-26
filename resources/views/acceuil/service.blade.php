@@ -83,7 +83,6 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">vehicule</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="../" class="dropdown-item">Liste des vehicules</a>
-                                <a href="../detail" class="dropdown-item"> Detail du vehicule</a>
                                 <a href="../booking" class="dropdown-item">reservation</a>
                             </div>
                         </div>
@@ -97,53 +96,6 @@
         </div>
     </div>
     <!-- Navbar End -->
-
-
-    <!-- Search Start -->
-    <!-- <div class="container-fluid bg-white pt-3 px-lg-5">
-        <div class="row mx-n2">
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Pickup Location</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Drop Location</option>
-                    <option value="1">Location 1</option>
-                    <option value="2">Location 2</option>
-                    <option value="3">Location 3</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <div class="date mb-3" id="date" data-target-input="nearest">
-                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                        data-target="#date" data-toggle="datetimepicker" />
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <div class="time mb-3" id="time" data-target-input="nearest">
-                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                        data-target="#time" data-toggle="datetimepicker" />
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <select class="custom-select px-4 mb-3" style="height: 50px;">
-                    <option selected>Select A Car</option>
-                    <option value="1">Car 1</option>
-                    <option value="2">Car 1</option>
-                    <option value="3">Car 1</option>
-                </select>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Search</button>
-            </div>
-        </div>
-    </div> -->
-    <!-- Search End -->
 
 
     <!-- Page Header Start -->
@@ -172,31 +124,7 @@
                             <h1 class="display-2 text-white mt-n2 m-0">01</h1>
                         </div>
                         <h4 class="text-uppercase mb-3">Car Rental</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item active d-flex flex-column justify-content-center px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-2x fa-money-check-alt text-secondary"></i>
-                            </div>
-                            <h1 class="display-2 text-white mt-n2 m-0">02</h1>
-                        </div>
-                        <h4 class="text-uppercase mb-3">Car Financing</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-2x fa-car text-secondary"></i>
-                            </div>
-                            <h1 class="display-2 text-white mt-n2 m-0">03</h1>
-                        </div>
-                        <h4 class="text-uppercase mb-3">Car Inspection</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                        <p class="m-0">Les services offert par le site permettent aux utilisateurs de louer differents types de véhicule</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -207,20 +135,8 @@
                             </div>
                             <h1 class="display-2 text-white mt-n2 m-0">04</h1>
                         </div>
-                        <h4 class="text-uppercase mb-3">Auto Repairing</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-2x fa-spray-can text-secondary"></i>
-                            </div>
-                            <h1 class="display-2 text-white mt-n2 m-0">05</h1>
-                        </div>
-                        <h4 class="text-uppercase mb-3">Auto Painting</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                        <h4 class="text-uppercase mb-3">Peinture Automobile</h4>
+                        <p class="m-0">Se service permet de rafraichir l'apparence des véhicules qui ont subit des dommages , ou qui présente des eraflures</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -231,8 +147,8 @@
                             </div>
                             <h1 class="display-2 text-white mt-n2 m-0">06</h1>
                         </div>
-                        <h4 class="text-uppercase mb-3">Auto Cleaning</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
+                        <h4 class="text-uppercase mb-3">Nettoyage Automobile</h4>
+                        <p class="m-0">Nettoyage approfondi de l'intérieur et de l'extérieur des véhicules </p>
                     </div>
                 </div>
             </div>
@@ -258,36 +174,7 @@
 
 
     <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="owl-carousel vendor-carousel">
-                <div class="bg-light p-4">
-                    <img src="img/vendor-1.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-2.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-3.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-4.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-5.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-6.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-7.png" alt="">
-                </div>
-                <div class="bg-light p-4">
-                    <img src="../acceuil/img/vendor-8.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Vendor End -->
 
 
@@ -316,47 +203,11 @@
                     <a class="text-body" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Aide</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Galerie de voiture</h4>
-                <div class="row mx-n1">
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-1.jpg" alt=""></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-2.jpg" alt=""></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-3.jpg" alt=""></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-4.jpg" alt=""></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-5.jpg" alt=""></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" src="../acceuil/img/gallery-6.jpg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Newsletter</h4>
-                <p class="mb-4">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
-                <div class="w-100 mb-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-dark border-dark" style="padding: 25px;" placeholder="Your Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary text-uppercase px-3">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-                <i>Lorem sit sed elitr sed kasd et</i>
-            </div> -->
         </div>
     </div>
     <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#">Cars Rental</a>. All Rights Reserved.</p>
-        <p class="m-0 text-center text-body">Designed by <a href="kevinAnimpo"></a></p>
+        <p class="mb-2 text-center text-body">&copy; <a href="#">Cars Rental</a>. Tous droits reservés.</p>
+        <p class="m-0 text-center text-body">Designed by kevinAnimpo<a href="kevinAnimpo"></a></p>
     </div>
     <!-- Footer End -->
 

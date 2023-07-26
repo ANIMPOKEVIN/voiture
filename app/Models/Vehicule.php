@@ -7,7 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicule extends Model
 {
-    use HasFactory;
+    use HasFactory;protected $fillable = [
+        'type_vehicule',    
+        'mark',
+        'model',
+        //'year_manifacturation',
+        'vehicle_image',
+        'color',
+        'transmission',
+        'availability',
+        'price_per_hour',
+        //'created',
+        //'modify',
+        //'deleted',
+        'agence_id',
+        'user_id',
+    ];
+
     protected $guarded = [];
     public function agence(){
         return $this->hasMany(agence::class);
@@ -15,8 +31,8 @@ class Vehicule extends Model
     public function user(){
         return $this->hasMany(User::class);
     }
-    public function type_vehicule(){
-        return $this->hasMany(TypeVehicule::class);
-    }
+    // public function type_vehicule(){
+    //     return $this->hasMany(TypeVehicule::class);
+    // }
   
 }

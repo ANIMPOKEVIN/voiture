@@ -82,8 +82,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>
-                                <a href="/detail" class="dropdown-item">Detail Du Vehicule</a>
+                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>                           
                                 <a href="/booking" class="dropdown-item">Reservation Du vehicule</a>
                             </div>
                         </div>
@@ -96,20 +95,6 @@
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Search Start -->
-     <!-- <div class="container-fluid bg-white pt-3 px-lg-5">
-        <div class="row mx-n2">
-            <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                <a href="{{route('login')}}">
-                <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Login</button>
-                </a>
-            </div>
-        </div>
-    </div> -->
-    <!-- Search End  bien-->
-
-
     <!-- Carousel Start -->
     <div class="container-fluid p-0" style="margin-bottom: 90px;">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
@@ -120,18 +105,13 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Reservez une voiture</h4>
                             <h1 class="display-1 text-white mb-md-4">Les meilleurs voitures de location à votre disposition</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservez Maintenant</a>
+                            <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservez Maintenant</a> -->
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="../acceuil/img/carousel-2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <!-- <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Reservez une voiture</h4>
-                            <h1 class="display-1 text-white mb-md-4">Des voitures de qualité aux meilleurs prix</h1>
-                            <a href="../voiture" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservez Maintenant</a> 
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -178,14 +158,6 @@
                         <h4 class="text-light text-uppercase m-0">Reservez à tout moment </h4>
                     </div>
                 </div>
-                <!-- <div class="col-lg-4 mb-2">
-                    <div class="d-flex align-items-center bg-light p-4 mb-4" style="height: 150px;">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary ml-n4 mr-4" style="width: 100px; height: 100px;">
-                            <i class="fa fa-2x fa-map-marker-alt text-secondary"></i>
-                        </div>
-                        <h4 class="text-uppercase m-0">Lots Of Pickup Locations</h4>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -207,21 +179,8 @@
                             <h1 class="display-2 text-white mt-n2 m-0">01</h1>
                         </div>
                         <h4 class="text-uppercase mb-3">Car Rental</h4>
-                        <!-- <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p> -->
                     </div>
                 </div>
-                <!-- <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="service-item active d-flex flex-column justify-content-center px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
-                                <i class="fa fa-2x fa-money-check-alt text-secondary"></i>
-                            </div>
-                            <h1 class="display-2 text-white mt-n2 m-0">02</h1>
-                        </div>
-                        <h4 class="text-uppercase mb-3">Car Financing</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                    </div>
-                </div> -->
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -281,7 +240,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -302,7 +261,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -323,7 +282,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -344,7 +303,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -365,7 +324,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -386,7 +345,7 @@
                                 <span>25K</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+                        <!-- <a class="btn btn-primary px-3" href="">$99.00/Day</a> -->
                     </div>
                 </div>
             </div>
@@ -485,54 +444,6 @@
     <!-- Banner End -->
 
 
-    <!-- Testimonial Start -->
-    <!-- <div class="container-fluid py-5">
-        <div class="container py-5">
-            <h1 class="display-1 text-primary text-center">05</h1>
-            <h1 class="display-4 text-uppercase text-center mb-5">Our Client's Say</h1>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <img class="img-fluid ml-n4" src="img/testimonial-1.jpg" alt="">
-                        <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
-                    </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div class="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <img class="img-fluid ml-n4" src="img/testimonial-2.jpg" alt="">
-                        <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
-                    </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div class="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <img class="img-fluid ml-n4" src="img/testimonial-3.jpg" alt="">
-                        <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
-                    </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div class="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <img class="img-fluid ml-n4" src="img/testimonial-4.jpg" alt="">
-                        <h1 class="display-2 text-white m-0 fa fa-quote-right"></h1>
-                    </div>
-                    <h4 class="text-uppercase mb-2">Client Name</h4>
-                    <i class="mb-2">Profession</i>
-                    <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
-
-
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
@@ -585,13 +496,6 @@
                                 <p>Serviceclient@gmail.com</p>
                             </div>
                         </div>
-                        <!-- <div class="d-flex">
-                            <i class="fa fa-2x fa-envelope-open text-primary flex-shrink-0 mr-3"></i>
-                            <div class="mt-n1">
-                                <h5 class="text-light">Return & Refund</h5>
-                                <p class="m-0">refund@example.com</p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -656,8 +560,6 @@
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Politique de confidentialité</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Terme & Conditions</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Nouveau Membre</a>
-                    <!-- <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Affiliate Programme</a>
-                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Return & Refund</a> -->
                     <a class="text-body" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Aide</a>
                 </div>
             </div>
@@ -684,19 +586,6 @@
                     </div>
                 </div>
             </div>
-             <!-- <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Newsletter</h4>
-                <p class="mb-4">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
-                <div class="w-100 mb-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-dark border-dark" style="padding: 25px;" placeholder="Your Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary text-uppercase px-3">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-                <i>Lorem sit sed elitr sed kasd et</i>
-            </div> -->
         </div> 
     </div>
     <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">

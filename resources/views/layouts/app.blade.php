@@ -37,25 +37,7 @@
     ***********************************-->
     <div id="main-wrapper">
 
-        <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="{{asset('assets/images/logo.png')}}" alt="">
-                <img class="logo-compact" src="{{asset('assets/images/logo-text.png')}}" alt="">
-                <img class="brand-title" src="{{asset('assets/images/logo-text.png')}}" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+    @include('nav')
 
         <!--**********************************
             Header start
@@ -167,36 +149,7 @@
             Header end ti-comment-alt
         ***********************************-->
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li> -->
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                        <ul aria-expanded="false">
-                            <!-- pour bloquer l'acces a un utilisateur a certaine page -->
-                            <li><a href="../agence">Agence </a></li>
-                            <li><a href="../paiement">Paiements</a> </li>
-                            <li><a href="../reservation">Reservations </a></li>
-                            <li><a href="../reservation_vehicule">Reservation_vehicules </a></li>
-                            <li><a href="../role">Roles </a></li>
-                            <li><a href="../type_vehicule">Type_vehicule </a></a></li>
-                            <li><a href="../user">users </a></li>
-                            <li><a href="../vehicule">Vehicules </a></li>
-                          
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
+        @include('sider')
 
         <!--**********************************
             Content body start
@@ -207,19 +160,7 @@
         ***********************************-->
 
 
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p>
-            </div>
-        </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
+   
         <!--**********************************
            Support ticket button start
         ***********************************-->
@@ -233,7 +174,7 @@
     <!--**********************************
         Main wrapper end
     ***********************************-->
-
+   
     <!--**********************************
         Scripts
     ***********************************-->
@@ -250,7 +191,7 @@
 
     <script src="{{asset('assets/js/dashboard/dashboard-2.js')}}"></script>
     <!-- Circle progress -->
-
+    @include('footer')
 </body>
 
 </html>
