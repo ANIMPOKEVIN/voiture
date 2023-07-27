@@ -51,16 +51,6 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -168,7 +158,7 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
-                            <span class="ml-1">Element</span>
+                           
 
                             @if(session('status'))
                             <div class="alert alert-success">
@@ -186,14 +176,14 @@
                     </div>
                 </div>
                 <!-- row -->
-                <center>
-                    <div class="row">
+               
+                    <div class="container" style="margin-left: auto; margin-right:auto">
 
                         <div class="col-xl-6 col-xxl-12">
 
                             <div class="card">
 
-                                <div class="card-header">
+                                <div class="container" style="margin-left: auto; margin-right:auto">
 
                                     <h4 class="card-title">Ajouter un vehicule</h4>
                                 </div>
@@ -208,8 +198,10 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control input-rounded" name="model" placeholder="entrez le modele">
                                             </div>
+                                            
                                             <div class="form-group">
-                                                <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
+                                                <label style="color: dark;">Image du véhicule</label>
+                                                    <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control input-rounded" name="color" placeholder="entrez une couleur">
@@ -261,7 +253,6 @@
                         </div>
 
                     </div>
-                </center>
             </div>
         </div>
         <!--**********************************

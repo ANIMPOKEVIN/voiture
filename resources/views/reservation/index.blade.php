@@ -53,16 +53,6 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -137,9 +127,9 @@
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary">
-                                    <a href="#" class="dropdown-item">
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                            <a href="#" class="dropdown-item">
+                                                <span class="ml-2">Logout </span>
+                                            </a>
                                         </button>
                                     </form>
                                 </div>
@@ -169,8 +159,8 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Datatable</span>
+                            <h4> welcome back!</h4>
+                            
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -186,7 +176,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Liste des reservation</h4>
+                                <h4 class="card-title">Liste des reservations</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -196,7 +186,7 @@
                                     <table id="example" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>                                          
+                                                <th>Id</th>
                                                 <th>first_name</th>
                                                 <th>last_name</th>
                                                 <th>email</th>
@@ -221,7 +211,12 @@
                                                         @csrf
 
                                                         <a href="{{url('reservation/' .$reservation->id. '/edit')}}">
-                                                            <button type="button" class="btn btn-rounded btn-info">Modifier</button>
+                                                            <button type="button" class="btn btn-rounded btn-info">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                                                </svg>
+                                                            </button>
                                                         </a>
                                                     </form>
 
@@ -250,7 +245,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-        @include('footer')
+    @include('footer')
     <!--**********************************
             Footer end
         ***********************************-->

@@ -11,10 +11,11 @@ use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResrvBookingController;
-;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Controllers\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +55,11 @@ Route::get('/detail', function () {
 //      return view('acceuil.booking');
 //  });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard',[DashboardController::class, 'afficher_dashboard'])->middleware(['auth','verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

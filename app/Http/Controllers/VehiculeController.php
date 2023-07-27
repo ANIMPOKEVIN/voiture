@@ -87,13 +87,10 @@ class VehiculeController extends Controller
             'mark' => 'required',
             'model' => 'required',
             'vehicle_image' => 'required',
-            'year_manifacturation' => 'required',
             'transmission' => 'required',
             'availability' => 'required',
             'price_per_hour' => 'required',
-            'created' => 'required',
-            'modify' => 'required',
-            'deleted' => 'required',
+           
             
         ]);
         $data = $request->all();

@@ -51,16 +51,6 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -168,7 +158,7 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
-                            <span class="ml-1">Element</span>
+                            
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -180,7 +170,7 @@
                 </div>
                 <!-- row -->
                
-                    <div class="row">
+                    <div class="container" style="margin-left: auto; margin-right:auto">
                                  <ul>
                                  @foreach ($errors->all() as $error)
                                      <li class="alert alert-danger">{{ $error }}</li>
@@ -189,7 +179,7 @@
                         <div class="col-xl-6 col-xxl-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Ajouter une reservation</h4>
+                                    <h4 class="card-title">Modifier une reservation</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
@@ -212,7 +202,6 @@
                             </div>
 
                         </div>
-
                     </div>
             </div>
         </div>

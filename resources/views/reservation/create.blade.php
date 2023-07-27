@@ -51,16 +51,6 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -168,7 +158,7 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
-                            <span class="ml-1">Element</span>
+                            
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -179,8 +169,7 @@
                     </div>
                 </div>
                 <!-- row -->
-                <center>
-                    <div class="row">
+                    <div class="container" style="margin-left: auto; margin-right:auto">
 
                         <div class="col-xl-6 col-xxl-12">
                             <div class="card">
@@ -236,7 +225,6 @@
                         </div>
 
                     </div>
-                </center>
             </div>
         </div>
         <!--**********************************

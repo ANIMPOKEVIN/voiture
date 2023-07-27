@@ -51,16 +51,6 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -167,8 +157,8 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Element</span>
+                            <h4> welcome back!</h4>
+                            
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -179,7 +169,7 @@
                     </div>
                 </div>
                 <!-- row -->
-                    <div class="row">
+                    <div class="container" style="margin-left: auto; margin-right:auto">
 
                         <div class="col-xl-6 col-xxl-12">
                             <div class="card">
@@ -197,6 +187,7 @@
                                                 <input type="text" class="form-control input-rounded" name="adress" placeholder="entrez l'adress">
                                             </div>
                                             <div class="form-group">
+                                                <label style="color: dark;">Heure d'ouverture</label>
                                                 <input type="time" class="form-control input-rounded" name="opening_time" placeholder="entrez l'heur d'ouverture">
                                             </div>
                                             <div class="form-group">

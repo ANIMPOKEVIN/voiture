@@ -138,10 +138,10 @@
                             </div>
                             <div class="px-2">
                                 <i class="fa fa-road text-primary mr-1"></i>
-                                <span>25K</span>
+                                <span>Fcfa{{$voiture->price_per_hour}}/hour</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">${{$voiture->price_per_hour}}/hour</a>
+                        <a class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">Book Now</a>
                     </div>
                 </div>
                 @endforeach
@@ -236,7 +236,7 @@
                 <h4 class="text-uppercase text-light mb-4">Liens Utiles</h4>
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Politique de confidentialité</a>
-                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Terme & Conditions</a>
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Termes & Conditions</a>
                     <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Nouveau membre</a>
                     <a class="text-body" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Aide</a>
                 </div>

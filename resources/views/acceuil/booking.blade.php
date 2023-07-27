@@ -56,19 +56,9 @@
                     <img class="img-fluid" src="{{ $vehicules->vehicle_image }}" alt="">
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">{{ $vehicules->price_per_hour }}$/hour</h4>
-                    <div class="d-flex mb-3">
-                        <h6 class="mr-2">Description du vehicule:</h6>
-                        <table>
-                            <tr>
-                                <td>
-
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
             </div>
+            <h4 class="mb-2">{{ $vehicules->price_per_hour }}fcfa/hour</h4>
             <div class="row mt-n3 mt-lg-0 pb-4">
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>

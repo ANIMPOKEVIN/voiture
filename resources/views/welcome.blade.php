@@ -76,7 +76,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../" class="nav-item nav-link active">Home</a>
                         <a href="/about" class="nav-item nav-link">A propos de nous</a>
                         <a href="/service" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
