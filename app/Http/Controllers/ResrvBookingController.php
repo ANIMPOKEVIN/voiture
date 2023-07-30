@@ -32,6 +32,6 @@ class ResrvBookingController extends Controller
         ]);
         $data = $request->all();
         reservation::create($data);
-        return redirect('/voiture');
+        return redirect('/voiture')->with('ajouter', 'Réservation envoyer avec succes!');
     }
 }

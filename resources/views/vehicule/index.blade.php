@@ -53,6 +53,7 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
+                            <a href="/">Aceuil</a>
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -174,7 +175,7 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4>welcome back!</h4>
-                     
+
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -184,99 +185,216 @@
                         </ol>
                     </div>
                 </div>
+
+
+
+
+                @if(session('ajouter'))
+
+                <div class="col-xl-6">
+                    <div class="alert alert-success solid alert-dismissible fade show">
+                        {{session('ajouter')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                        </button>
+
+                    </div>
+                </div>
+                @endif
+                @if(session('status'))
+
+                <div class="col-xl-6">
+                    <div class="alert alert-danger solid alert-dismissible fade show">
+                        {{session('status')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                        </button>
+
+                    </div>
+                </div>
+                @endif
+                @if(session('modifier'))
+
+                <div class="col-xl-6">
+                    <div class="alert alert-primary solid alert-dismissible fade show">
+                        {{session('modifier')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                        </button>
+
+                    </div>
+                </div>
+                @endif
                 <!-- row -->
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Liste des vehicules</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <a href="{{url('vehicule/create')}}">
-                                        <button type="button" class="btn btn-primary">Ajouter</button>
-                                    </a>
-                                    <table id="example" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>mark</th>
-                                                <th>model</th>
-                                                <th>color</th>
-                                                <th>transmission</th>
-                                                <th>availability</th>
-                                                <th>price_per_hour</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
 
-                                        <tbody>
-                                            @foreach ($vehicule as $vehicule)
-                                            <tr>
-                                                <td>{{$vehicule->id}}</td>
-                                                <td>{{$vehicule->mark}}</td>
-                                                <td>{{$vehicule->model}}</td>
-                                                <td>{{$vehicule->color}}</td>
-                                                <td>{{$vehicule->transmission}}</td>
-                                                <td>{{$vehicule->availability}}</td>
-                                                <td>{{$vehicule->price_per_hour}}</td>
-                                                <td>
-                                                    <form method="POST" action="{{url('/vehicule/delete/' .$vehicule->id)}}">
-                                                        {{method_field('DELETE')}}
-                                                        @csrf
-
-                                                        <a href="{{url('vehicule/' .$vehicule->id. '/edit')}}">
-                                                            <button type="button" class="btn btn-rounded btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                                                </svg></button>
-                                                        </a>
-
-
-                                                        <button type="submit" class="btn btn-rounded btn-danger">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
-                                                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
-                                                            </svg>
-                                                        </button>
-                                                    </form>
-
-
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-
-                                    </table>
+                <!--modal start-->
+                <div class="bootstrap-modal">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicModal">Ajouter un Véhicule</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="basicModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Ajouter un véhicule</h5>
+                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                    </button>
                                 </div>
+                                <form method="POST" action="{{url('vehicule')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-default" name="mark" placeholder="entrez la marque">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-rounded" name="model" placeholder="entrez le modele">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color: dark;">Image du véhicule</label>
+                                        <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-rounded" name="color" placeholder="entrez une couleur">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control form-control-lg" name="transmission">
+                                            <option selected="selected">Transmission</option>
+                                            <option value="automatique">Automatique</option>
+                                            <option value="manuel">Manuel </option>
+                                        </select>
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" name="availability">
+                                                <option selected="selected">Selectionner le status</option>
+                                                <option value="disponible">Disponible</option>
+                                                <option value="non_disponible">Non disponible </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix par heur">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" name="agence_id">
+                                                <option selected="selected">Selectionner une agence</option>
+                                                <!-- la boucle foreach permet de recuperer les elements dans un tableau -->
+                                                @foreach ($agence as $agence)
+                                                <option value="{{$agence->id}}">{{$agence->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg" name="type_vehicule">
+                                                    <option selected="selected">Selectionner un type</option>
+                                                    @foreach ($type_vehicule as $type_vehicule)
+                                                    <option value="{{$type_vehicule->name}}">{{$type_vehicule->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <input type="text" value="{{ Auth::user()->id }}" name="user_id" style="display: none;">
+                                            <div class="modal-footer">
+                                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
+                            </form>
                         </div>
                     </div>
 
 
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Liste des vehicules</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <a href="{{url('vehicule/create')}}">
+
+                                        </a>
+                                        <table id="example" class="display" style="min-width: 845px">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>mark</th>
+                                                    <th>model</th>
+                                                    <th>color</th>
+                                                    <th>transmission</th>
+                                                    <th>availability</th>
+                                                    <th>price_per_hour</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @foreach ($vehicule as $vehicule)
+                                                <tr>
+                                                    <td>{{$vehicule->id}}</td>
+                                                    <td>{{$vehicule->mark}}</td>
+                                                    <td>{{$vehicule->model}}</td>
+                                                    <td>{{$vehicule->color}}</td>
+                                                    <td>{{$vehicule->transmission}}</td>
+                                                    <td>{{$vehicule->availability}}</td>
+                                                    <td>{{$vehicule->price_per_hour}}</td>
+                                                    <td>
+                                                        <form method="POST" action="{{url('/vehicule/delete/' .$vehicule->id)}}">
+                                                            {{method_field('DELETE')}}
+                                                            @csrf
+
+                                                            <a href="{{url('vehicule/' .$vehicule->id. '/edit')}}">
+                                                                <button type="button" class="btn btn-rounded btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                                                    </svg></button>
+                                                            </a>
+
+                                                            <!-- onclick pour afficher le modal quand on veut supprimer -->
+                                                            <button onclick="return confirm('voulez vous vraiment supprimer ?')" type="submit" class="btn btn-rounded btn-danger">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                                                </svg>
+                                                            </button>
+                                                        </form>
+
+
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--**********************************
+        <!--**********************************
             Content body end
         ***********************************-->
 
 
-    <!--**********************************
+        <!--**********************************
             Footer start
         ***********************************-->
-    @include('footer')
-    <!--**********************************
+        @include('footer')
+        <!--**********************************
             Footer end
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
            Support ticket button start
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
            Support ticket button end
         ***********************************-->
 

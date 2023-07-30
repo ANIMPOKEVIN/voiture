@@ -16,7 +16,10 @@ class VehiculeController extends Controller
     public function index()
     {
         $vehicule = vehicule::all();
-        return view('vehicule.index', compact('vehicule'));
+        $user = User::all();
+        $agence = agence::all();
+        $type_vehicule = typevehicule::all();
+        return view('vehicule.index', compact('vehicule','agence','user','type_vehicule'));
     }
 
     /**
@@ -28,6 +31,7 @@ class VehiculeController extends Controller
         $agence = agence::all();
         $type_vehicule = TypeVehicule::all();
         return view('vehicule.create', compact('type_vehicule','user','agence'));
+        
         
     }
 
@@ -57,7 +61,7 @@ class VehiculeController extends Controller
         }
         
         Vehicule::create($data);
-        return redirect('vehicule')->with('status', 'vehicule ajouter avec succes!');
+        return redirect('vehicule')->with('ajouter', 'vehicule ajouter avec succes!');
     }
 
     /**
@@ -76,6 +80,7 @@ class VehiculeController extends Controller
         $vehicule = Vehicule::all();
         $vehicule = Vehicule::find($id);
         return view('vehicule.edit', compact('vehicule'));
+        
     }
 
     /**
@@ -96,7 +101,7 @@ class VehiculeController extends Controller
         $data = $request->all();
         $vehicule = Vehicule::find($id);
         $vehicule->update($data);
-        return redirect('vehicule');
+        return redirect('vehicule')->with('modifier', 'vehicule modifier avec succes!');
     }
 
     /**
@@ -110,16 +115,16 @@ class VehiculeController extends Controller
 
 //route pour modifier le statut du vehicule
     public function modifier(Request $request, string $id)
-    {
+     {
         $request->validate([
            
             'availability' => 'required',
         ]);
         $vehicule = vehicule::find($id);
-        $vehicule-> availability = $request->availability;
+         $vehicule-> availability = $request->availability;
         $vehicule->modifier();
 
-        return redirect('/vehicule');
-    }
+     return redirect('/vehicule');
+ }
 
 }

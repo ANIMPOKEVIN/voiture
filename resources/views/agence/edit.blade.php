@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title> Admin Dashboard </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -50,10 +50,9 @@
             <div class="header-content">
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-                            <div class="search_bar dropdown">
-                            </div>
-                        </div>
+                       <div class="header-left">                      
+                           <a href="/">Aceuil</a>    
+                        </div>  
 
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown notification_dropdown">
@@ -171,7 +170,7 @@
                     </div>
                 </div>
                 <!-- row -->
-                    <div class="container" style="margin-left: auto; margin-right:auto">
+                    <div class="class" style="margin-left: auto; margin-right: auto;">
                         <div class="col-xl-6 col-xxl-12">
                             <div class="card">
                                 <div class="card-header">

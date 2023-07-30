@@ -52,9 +52,9 @@
             <div class="header-content">
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-                        </div>
-
+                    <div class="header-left">                      
+                           <a href="/">Aceuil</a>     
+                        </div>  
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
@@ -171,7 +171,7 @@
                     </div>
                 </div>
                 <!-- row -->
-
+       
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -187,6 +187,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
+                                                <th>id_vehile</th>
                                                 <th>first_name</th>
                                                 <th>last_name</th>
                                                 <th>email</th>
@@ -200,6 +201,7 @@
                                             @foreach ($reservation as $reservation)
                                             <tr>
                                                 <td>{{$reservation->id}}</td>
+                                                <td>{{$reservation->id_vehile}}</td>
                                                 <td>{{$reservation->first_name}}</td>
                                                 <td>{{$reservation->last_name}}</td>
                                                 <td>{{$reservation->email}}</td>

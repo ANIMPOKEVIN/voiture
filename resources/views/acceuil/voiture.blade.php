@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -63,7 +63,17 @@
     </div>
     <!-- Topbar End -->
 
+    @if(session('ajouter'))
 
+    <div class="col-xl-6">
+        <div class="alert alert-primary solid alert-dismissible fade show">
+            {{session('ajouter')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+            </button>
+
+        </div>
+    </div>
+    @endif
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="position-relative px-lg-5" style="z-index: 9;">
@@ -82,12 +92,12 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Vehicule</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="car.html" class="dropdown-item active">Liste Des Vehicules</a>                    
+                                <a href="car.html" class="dropdown-item active">Liste Des Vehicules</a>
                                 <a href="../booking" class="dropdown-item">Reservation Du vehicule</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
-                            
+
                         </div>
                         <a href="../" class="nav-item nav-link">Contact</a>
                     </div>
@@ -99,7 +109,7 @@
 
 
     <!-- Search Start -->
-    
+
 
 
     <!-- Page Header Start -->
@@ -114,19 +124,22 @@
     <!-- Page Header Start -->
 
 
+
+
+
     <!-- Rent A Car Start -->
-    
+
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <h1 class="display-4 text-uppercase text-center mb-5">Trouvez votre voiture</h1>
             <div class="row">
 
 
-            @foreach ($voitures as $voiture)
+                @foreach ($voitures as $voiture)
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
-                    <h4 class="text-uppercase mb-4">{{$voiture->mark}}</h4>
-                        <img class="img-fluid mb-4" src="{{$voiture->vehicle_image}}" alt="">                       
+                        <h4 class="text-uppercase mb-4">{{$voiture->mark}}</h4>
+                        <img class="img-fluid mb-4" src="{{$voiture->vehicle_image}}" alt="">
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
                                 <i class="fa fa-car text-primary mr-1"></i>
@@ -138,7 +151,7 @@
                             </div>
                             <div class="px-2">
                                 <i class="fa fa-road text-primary mr-1"></i>
-                                <span>Fcfa{{$voiture->price_per_hour}}/hour</span>
+                                <span>{{$voiture->price_per_hour}}Fcfa/hour</span>
                             </div>
                         </div>
                         <a class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">Book Now</a>
@@ -148,7 +161,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- Rent A Car End -->
 
 

@@ -37,7 +37,7 @@ class AgenceController extends Controller
         ]);
         $data = $request->all();
         agence::create($data);
-        return redirect('agence');
+        return redirect('agence')->with('ajouter', 'vehicule ajouter avec succes!');
     }
 
     /**
@@ -72,7 +72,7 @@ class AgenceController extends Controller
         $data = $request->all();
         $agence = agence::find($id);
         $agence->update($data);
-        return redirect('agence');
+        return redirect('agence')->with('modifier', 'vehicule modifier avec succes!');
     }
 
     /**
@@ -81,6 +81,6 @@ class AgenceController extends Controller
     public function destroy($id)
     {
         agence::destroy($id);
-        return redirect('agence');
+        return redirect('agence')->with('status', 'vehicule supprimer avec succes!');
     }
 }

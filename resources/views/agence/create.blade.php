@@ -51,6 +51,8 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
+                            <a href="/">Aceuil</a>
+
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -121,13 +123,13 @@
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
                                         <span class="ml-2">{{ Auth::user()->name }} </span>
-                                    </a>                                  
+                                    </a>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary">
-                                    <a href="#" class="dropdown-item">
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                            <a href="#" class="dropdown-item">
+                                                <span class="ml-2">Logout </span>
+                                            </a>
                                         </button>
                                     </form>
                                 </div>
@@ -148,7 +150,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-       
+
         <!--**********************************
             Content body start
         ***********************************-->
@@ -158,7 +160,7 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
-                            
+
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -169,58 +171,57 @@
                     </div>
                 </div>
                 <!-- row -->
-                    <div class="container" style="margin-left: auto; margin-right:auto">
-
-                        <div class="col-xl-6 col-xxl-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Ajouter une agence</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="basic-form">
-                                        <form method="POST" action="{{url('agence')}}">
-                                            @csrf
-                                            <div class="form-group">
-                                                <input type="text" class="form-control input-default" name="name" placeholder="entrez le nom">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control input-rounded" name="adress" placeholder="entrez l'adress">
-                                            </div>
-                                            <div class="form-group">
-                                                <label style="color: dark;">Heure d'ouverture</label>
-                                                <input type="time" class="form-control input-rounded" name="opening_time" placeholder="entrez l'heur d'ouverture">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="number" class="form-control input-rounded" name="phone_number" placeholder="entrez le numero de telephone">
-                                            </div>
-
-                                            <button type="submit" class="btn btn-primary">Ajouter</button>
-                                        </form>
+         
+                <div class="col-xl-6 col-xxl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Ajouter une agence</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
+                                <form method="POST" action="{{url('agence')}}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-default" name="name" placeholder="entrez le nom">
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-rounded" name="adress" placeholder="entrez l'adress">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color: dark;">Heure d'ouverture</label>
+                                        <input type="time" class="form-control input-rounded" name="opening_time" placeholder="entrez l'heur d'ouverture">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control input-rounded" name="phone_number" placeholder="entrez le numero de telephone">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-        <!--**********************************
+    </div>
+    <!--**********************************
             Content body end
         ***********************************-->
 
 
-        <!--**********************************
+    <!--**********************************
             Footer start
         ***********************************-->
-        @include('footer')
-        <!--**********************************
+    @include('footer')
+    <!--**********************************
             Footer end
         ***********************************-->
 
-        <!--**********************************
+    <!--**********************************
            Support ticket button start
         ***********************************-->
 
-        <!--**********************************
+    <!--**********************************
            Support ticket button end
         ***********************************-->
 

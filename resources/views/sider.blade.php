@@ -4,7 +4,7 @@
         <div class="quixnav">
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Dashboard</li>
+                    <li class="nav-label first"><b>Dashboard</b></li>
                     <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                     </li> -->
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
