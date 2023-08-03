@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>Cars Rental Admin </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="asset/images/favicon.png">
     <!-- Datatable -->
@@ -129,7 +129,7 @@
                                         @csrf
                                         <button class="btn btn-primary">
                                             <a href="#" class="dropdown-item">
-                                                <span class="ml-2">Logout </span>
+                                                <span class="ml-2">Déconnexion </span>
                                             </a>
                                         </button>
                                     </form>
@@ -164,12 +164,12 @@
                            
                         </div>
                     </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <!-- <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
                         </ol>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- row -->
 

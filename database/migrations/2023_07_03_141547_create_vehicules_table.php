@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('mark');
             $table->string('model');
-            $table->char('vehicle_image')->unique();;
+            $table->char('vehicle_image');
             $table->string('color');
             $table->string('transmission');
             $table->string('availability');

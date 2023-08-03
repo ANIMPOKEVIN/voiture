@@ -63,17 +63,7 @@
     </div>
     <!-- Topbar End -->
 
-    @if(session('ajouter'))
-
-    <div class="col-xl-6">
-        <div class="alert alert-primary solid alert-dismissible fade show">
-            {{session('ajouter')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
-            </button>
-
-        </div>
-    </div>
-    @endif
+    
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="position-relative px-lg-5" style="z-index: 9;">
@@ -86,14 +76,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="../" class="nav-item nav-link">Home</a>
-                        <a href="../" class="nav-item nav-link">A propos de nous</a>
+                        <a href="../" class="nav-item nav-link">Acceuil</a>
+                        <a href="../" class="nav-item nav-link">A propos</a>
                         <a href="../" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Vehicule</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="car.html" class="dropdown-item active">Liste Des Vehicules</a>
-                                <a href="../booking" class="dropdown-item">Reservation Du vehicule</a>
+                                <!-- <a href="../booking" class="dropdown-item">Reservation Du vehicule</a> -->
                             </div>
                         </div>
                         <div class="nav-item dropdown">
@@ -116,7 +106,7 @@
     <div class="container-fluid page-header">
         <h1 class="display-3 text-uppercase text-white mb-3">Liste des véhicules</h1>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Acceuil</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
             <h6 class="text-uppercase text-body m-0">Liste des vhicules</h6>
         </div>
@@ -124,7 +114,17 @@
     <!-- Page Header Start -->
 
 
+    @if(session('ajouter'))
 
+<div class="col-xl-6">
+    <div class="alert alert-success solid alert-dismissible fade show">
+        {{session('ajouter')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+        </button>
+
+    </div>
+</div>
+@endif
 
 
     <!-- Rent A Car Start -->

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\reservation;
 use App\Models\User;
+use App\Notifications\Approuver;
+use App\Notifications\Rejeter;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -49,8 +51,9 @@ class ReservationController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
+        $reservation = reservation::find($id);
+        return view('reservation.show',compact('reservation'));
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -74,7 +77,6 @@ class ReservationController extends Controller
         $reservation = reservation::find($id);
         $reservation-> status = $request->status;
         $reservation->update();
-
         return redirect('/reservation');
     }
 

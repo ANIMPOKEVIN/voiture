@@ -69,7 +69,8 @@ class VehiculeController extends Controller
      */
     public function show(string $id)
     {
-       //
+       $vehicule = Vehicule::find($id);
+       return view('vehicule.show',compact('vehicule'));
     }
 
     /**
@@ -100,7 +101,15 @@ class VehiculeController extends Controller
         ]);
         $data = $request->all();
         $vehicule = Vehicule::find($id);
-        $vehicule->update($data);
+        
+
+        if(!empty($request->file('vehicle_image'))){
+            $url = $request->file('vehicle_image')->store('uploads/images/vehicle' , 'public');
+            $photo = url('storage/' .$url);
+            $data['vehicle_image'] = $photo;
+            }
+            $vehicule->update($data);
+
         return redirect('vehicule')->with('modifier', 'vehicule modifier avec succes!');
     }
 

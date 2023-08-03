@@ -76,14 +76,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="../" class="nav-item nav-link">Home</a>
-                        <a href="../" class="nav-item nav-link">A propos de nous</a>
+                        <a href="../" class="nav-item nav-link">Acceuil</a>
+                        <a href="../" class="nav-item nav-link">A propos </a>
                         <a href="../" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="../" class="dropdown-item">Liste des véhicules</a>
-                                <a href="../" class="dropdown-item">Réservation de voiture</a>
+                                <!-- <a href="../" class="dropdown-item">Réservation de voiture</a> -->
                             </div>
                         </div>
                         <div class="nav-item dropdown">

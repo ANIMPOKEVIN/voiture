@@ -38,7 +38,7 @@
     <div class="container-fluid page-header">
         <h1 class="display-3 text-uppercase text-white mb-3">Réservation de voiture</h1>
         <div class="d-inline-flex text-white">
-            <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
+            <h6 class="text-uppercase m-0"><a class="text-white" href="">Acceuil</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
             <h6 class="text-uppercase text-body m-0">Réservation de voiture</h6>
         </div>
@@ -88,29 +88,29 @@
                 <div class="col-lg-8">
                     <h2 class="mb-4">Detail de la reservation</h2>
                     <div class="mb-5">
-                        <form method="post" action="/add/booking">
+                        <form method="post" name="heure" action="/add/booking">
                             @csrf
                             <div class="row">
 
                                 <input type="text" name="status" value="En attente" style="display: none;">
                                 <input type="text" name="id_vehile" value="{{ $vehicules->id }}" style="display: none;">
+                                <input type="text" name="price_per_hour" id="prix" value="{{ $vehicules->price_per_hour }}" style="display: none;">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control p-4" name="first_name" placeholder="first Name" required="required">
+                                    <input type="text" class="form-control p-4" name="first_name" placeholder="Nom" required="required">
                                 </div>
                                 <div class="col-6 form-group">
-                                    <input type="text" class="form-control p-4" name="last_name" placeholder="Last Name" required="required">
+                                    <input type="text" class="form-control p-4" name="last_name" placeholder="Prenom" required="required">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 form-group">
-                                    <input type="email" class="form-control p-4" name="email" placeholder="Your Email" required="required">
+                                    <input type="email" class="form-control p-4" name="email" placeholder="Votre Email" required="required">
                                 </div>
                                 <div class="col-6 form-group">
-                                    <input type="number" class="form-control p-4" name="phone_number" placeholder="Phone Number" required="required">
+                                    <input type="number" class="form-control p-4" name="phone_number" placeholder="Numéro de téléphone" required="required">
                                 </div>
                             </div>
-                    </div>
-                    <div class="mb-5">
+                   
                         <div class="row">
                             <div class="col-6 form-group">
                                 <input type="text" class="form-control p-4" name="place_of_care" placeholder="Lieu de prise en charge" required="required">
@@ -118,20 +118,29 @@
                             <div class="col-6 form-group">
                                 <input type="text" class="form-control p-4" name="place_of_deposit" placeholder="Lieu de depot" required="required">
                             </div>
-                        </div>
-                        <div class="row">
+                           
+                       
                             <div class="col-6 form-group">
                                 <label>Date de début</label>
-                                <input type="date" class="form-control p-4" name="start_date" placeholder="date de debut" required="required">
+                                <input type="datetime-local"  class="form-control p-4" name="start_date" id="date1" onchange="calculer('heure')" placeholder="date de debut" required="required">
                             </div>
                             <div class="col-6 form-group">
                                 <label>Date de fin</label>
-                                <input type="date" class="form-control p-4" name="end_date" placeholder="date de fin" required="required">
+                                <input type="datetime-local"  class="form-control p-4" name="end_date" id="date2" onchange="calculer('heure')" placeholder="date de fin" required="required">
                             </div>
-
+                        
+                            <div class="col-6 form-group">
+                                <label>Nombre d'heure</label>
+                                <input type="text" class="form-control p-4" id="heur" name="heur" placeholder="Nombre d'eure" required="required" readonly>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label>Prix total</label>
+                                <input type="text" class="form-control p-4" id="total" name="prix" placeholder="Prix total" required="required" readonly>
+                            </div>
                         </div>
-                    </div>
+                    </div>                 
                 </div>
+
                 <div class="col-lg-4">
                     <div class="bg-secondary p-5 mb-5">
                         <h2 class="text-primary mb-4">Methode de Paiement</h2>
@@ -155,6 +164,21 @@
         </div>
     </div>
     <!-- Car Booking End -->
+            <!-- fonction javascript pour generer le prix total de la location du client -->
+    <script language="javascript">
+        function calculer(heure)
+        {
+            var d1 = new Date(document.getElementById('date1').value) ;
+            var d2 = new Date(document.getElementById('date2').value) ;
+            var prix = parseInt(document.getElementById('prix').value) ;
+
+            var difftime =Math.abs(d2 - d1);
+           var differchehours= (difftime / (1000 * 60 * 60));
+           document.getElementById('heur').value = differchehours;
+           document.getElementById('total').value = differchehours * prix;
+        }
+
+    </script>
 
     <!-- 
      Vendor Start -->

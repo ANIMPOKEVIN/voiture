@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Vehicule;
 use App\Models\TypeVehicule;
 use App\Models\Reservation;
+use App\Notifications\Approuver;
 use Illuminate\Http\Request;
 
 class ResrvBookingController extends Controller
@@ -29,6 +30,9 @@ class ResrvBookingController extends Controller
             'start_date' => 'required',
             'end_date' => 'required',
             'status' => 'required',
+            'price_per_hour' => 'required',
+            'heur' => 'required',
+            'prix' => 'required',
         ]);
         $data = $request->all();
         reservation::create($data);

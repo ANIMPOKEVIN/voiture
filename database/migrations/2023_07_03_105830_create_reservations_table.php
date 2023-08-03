@@ -20,9 +20,12 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('place_of_care');
             $table->string('place_of_deposit');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->datetime('start_date');
+            $table->datetime('end_date');
             $table->string('status');
+            $table->string('price_per_hour');
+            $table->text('heur');
+            $table->integer('prix');
             // $table->foreignId('user_id')->constrained();
 
             $table->timestamps();

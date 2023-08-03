@@ -35,7 +35,7 @@ class TypeVehiculeController extends Controller
         ]);
         $data = $request->all();
         TypeVehicule::create($data);
-        return redirect('type_vehicule')->with('ajouter', 'vehicule ajouter avec succes!');
+        return redirect('type_vehicule')->with('ajouter', 'type vehicule ajouter avec succes!');
     }
 
     /**
@@ -68,7 +68,7 @@ class TypeVehiculeController extends Controller
         $data = $request->all();
         $type_vehicule = TypeVehicule::find($id);
         $type_vehicule->update($data);
-        return redirect('type_vehicule')->with('modifier', 'vehicule modifier avec succes!');
+        return redirect('type_vehicule')->with('modifier', 'type vehicule modifier avec succes!');
     }
 
     /**
@@ -77,6 +77,6 @@ class TypeVehiculeController extends Controller
     public function destroy(string $id)
     {
         TypeVehicule::destroy($id);
-        return redirect('type_vehicule')->with('status', 'vehicule supprimer avec succes!');
+        return redirect('type_vehicule')->with('status', 'type vehicule supprimer avec succes!');
     }
 }

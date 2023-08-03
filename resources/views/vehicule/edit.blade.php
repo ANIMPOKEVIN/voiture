@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>Cars Rental Admin </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -129,7 +129,7 @@
                                         @csrf
                                         <button class="btn btn-primary">
                                     <a href="#" class="dropdown-item">
-                                        <span class="ml-2">Logout </span>
+                                        <span class="ml-2">Déconnexion </span>
                                     </a>
                                         </button>
                                     </form>
@@ -158,12 +158,12 @@
                             
                         </div>
                     </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <!-- <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Element</a></li>
                         </ol>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="container" style="margin-left: auto; margin-right:auto">
@@ -180,7 +180,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-                                    <form method="POST" action="{{url('vehicule/' .$vehicule->id)}}" novalidate="novalidate">
+                                    <form method="POST" action="{{url('vehicule/' .$vehicule->id)}}"  enctype="multipart/form-data">
                                         @csrf
                                         {{method_field('PATCH')}}
                                         <div class="form-group">

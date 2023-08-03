@@ -21,6 +21,7 @@ return [
             'roles' => 'c,r,u,d',
             'type_vehicules' => 'c,r,u,d',
             'vehicules' => 'c,r,u,d',
+            'dashboard' => 'b',
         ],
         'clients' => [
             'users' => 'c,r,u,d',
@@ -33,5 +34,6 @@ return [
         'r' => 'read',
         'u' => 'update',
         'd' => 'delete',
+        'b' => 'bord',
     ],
 ];

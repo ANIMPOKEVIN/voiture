@@ -76,18 +76,33 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="../" class="nav-item nav-link active">Home</a>
-                        <a href="/about" class="nav-item nav-link">A propos de nous</a>
+                        <a href="../" class="nav-item nav-link active">Acceuil</a>
+                        <a href="/about" class="nav-item nav-link">A propos </a>
                         <a href="/service" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>                           
-                                <a href="/booking" class="dropdown-item">Reservation Du vehicule</a>
                             </div>
                         </div>
                        
                         <a href="/contact" class="nav-item nav-link">Contact</a>
+                         <a href="/profile" class="nav-item nav-link">profile</a>
+                        
+                         <!-- le code suivant est executer si l'utilisateur est connecter et a la permission d'acceder au dashboard -->
+                         @if (auth()->check())            
+                         @if (Auth::User()->hasPermission('dashboard-bord'))
+                           <a href="/dashboard" class="nav-item nav-link">Dashbord</a> 
+                         @endif
+                        @endif
+                        
+                        @guest                 
+                        <a href="/login" class="nav-item nav-link">Connexion</a> 
+                        @endguest
+                        <!-- se lien apparait si l'utilisateur n'est pas connecter -->
+                        @guest
+                        <a href="/register" class="nav-item nav-link">s'inscrire</a>
+                        @endguest
                     </div>
                 </div>
             </nav>
@@ -105,7 +120,6 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Reservez une voiture</h4>
                             <h1 class="display-1 text-white mb-md-4">Les meilleurs voitures de location à votre disposition</h1>
-                            <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Reservez Maintenant</a> -->
                         </div>
                     </div>
                 </div>
