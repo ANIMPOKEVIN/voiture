@@ -246,11 +246,12 @@
                                                         <input type="time" class="form-control input-rounded" name="opening_time" placeholder="entrez l'heur d'ouverture">
                                                     </div>
                                                     <div class="form-group">
+                                                    <label style="color: dark;">Heure de fermeture</label>
+                                                        <input type="time" class="form-control input-rounded" name="close_time" placeholder="entrez l'heur de fermeture">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <input type="number" class="form-control input-rounded" name="phone_number" placeholder="entrez le numero de telephone">
                                                     </div>
-
-
-
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
@@ -267,7 +268,8 @@
                                             <th>Nom</th>
                                             <th>Adress</th>
                                             <th>Heure D'ouverture</th>                        
-                                            <th>Numero</th>
+                                            <th>Heure De fermeture</th>                        
+                                            <th>Numero de téléphone</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -279,8 +281,10 @@
                                             <td>{{$agence->name}}</td>
                                             <td>{{$agence->adress}}</td>
                                             <td>{{$agence->opening_time}}</td>
-                                            <td>{{$agence->look_time}}</td>
+                                            <td>{{$agence->close_time}}</td>
                                             <td>{{$agence->phone_number}}</td>
+                                            
+                                            
 
                                             <td>
                                                 <form method="POST" action="{{url('/agence/delete/' .$agence->id)}}">

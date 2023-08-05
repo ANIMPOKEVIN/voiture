@@ -63,7 +63,7 @@
     </div>
     <!-- Topbar End -->
 
-    
+
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="position-relative px-lg-5" style="z-index: 9;">
@@ -78,7 +78,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="../" class="nav-item nav-link">Acceuil</a>
                         <a href="../" class="nav-item nav-link">A propos</a>
-                        <a href="../" class="nav-item nav-link">Service</a>
+                        <!-- <a href="../" class="nav-item nav-link">Service</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Vehicule</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -89,7 +89,7 @@
                         <div class="nav-item dropdown">
 
                         </div>
-                        <a href="../" class="nav-item nav-link">Contact</a>
+                        <!-- <a href="../" class="nav-item nav-link">Contact</a> -->
                     </div>
                 </div>
             </nav>
@@ -105,26 +105,26 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
         <h1 class="display-3 text-uppercase text-white mb-3">Liste des véhicules</h1>
-        <div class="d-inline-flex text-white">
+        <!-- <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="">Acceuil</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
             <h6 class="text-uppercase text-body m-0">Liste des vhicules</h6>
-        </div>
+        </div> -->
     </div>
     <!-- Page Header Start -->
 
 
     @if(session('ajouter'))
 
-<div class="col-xl-6">
-    <div class="alert alert-success solid alert-dismissible fade show">
-        {{session('ajouter')}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
-        </button>
+    <div class="col-xl-6">
+        <div class="alert alert-success solid alert-dismissible fade show">
+            {{session('ajouter')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+            </button>
 
+        </div>
     </div>
-</div>
-@endif
+    @endif
 
 
     <!-- Rent A Car Start -->
@@ -153,8 +153,24 @@
                                 <i class="fa fa-road text-primary mr-1"></i>
                                 <span>{{$voiture->price_per_hour}}Fcfa/hour</span>
                             </div>
+
                         </div>
-                        <a class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">Book Now</a>
+
+                        @csrf
+                        <a class="btn btn-primary" href="{{url('voiture/' .$voiture->id  )}}">
+                            Détail
+                        </a>
+                        @if ($voiture->availability =="non_disponible")
+                        <a style="display: none;" class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">Reservez Maintenant</a>
+                        @else
+                        <a class="btn btn-primary px-3" href="/booking/{{ $voiture->id }}">Reservez Maintenant</a>
+                        @endif
+
+
+                        <div class="px-2">
+                            <!-- <i class="fa fa-road text-primary mr-1"></i> -->
+                            <span>{{$voiture->availability}}</span>
+                        </div>
                     </div>
                 </div>
                 @endforeach

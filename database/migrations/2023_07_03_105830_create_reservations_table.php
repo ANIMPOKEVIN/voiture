@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('price_per_hour');
             $table->text('heur');
             $table->integer('prix');
-            // $table->foreignId('user_id')->constrained();
+            $table->foreignId('User')->constrained();
 
             $table->timestamps();
         });

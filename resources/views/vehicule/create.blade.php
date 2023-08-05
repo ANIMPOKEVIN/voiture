@@ -51,9 +51,9 @@
             <div class="header-content">
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
-                    <div class="header-left">                      
-                           <a href="/">Aceuil</a>                         
-                        </div>  
+                        <div class="header-left">
+                            <a href="/">Aceuil</a>
+                        </div>
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
@@ -159,7 +159,12 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4> welcome back!</h4>
-                           
+
+                            <ul>
+                                @foreach ($errors->all() as $error )
+                                <li class="alert alert-danger">{{ $error }}</li>
+                                @endforeach
+                            </ul>
 
                             @if(session('ajouter'))
                             <div class="alert alert-success">
@@ -167,7 +172,7 @@
                             </div>
                             @endif
                         </div>
-                        
+
                     </div>
                     <!-- <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
@@ -177,83 +182,84 @@
                     </div> -->
                 </div>
                 <!-- row -->
-               
-                    <div class="container" style="margin-left: auto; margin-right:auto">
 
-                        <div class="col-xl-6 col-xxl-12">
+                <div class="container" style="margin-left: auto; margin-right:auto">
 
-                            <div class="card">
+                    <div class="col-xl-6 col-xxl-12">
 
-                                <div class="container" style="margin-left: auto; margin-right:auto">
+                        <div class="card">
 
-                                    <h4 class="card-title">Ajouter un vehicule</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="basic-form">
-                                        <form method="POST" action="{{url('vehicule')}}" enctype="multipart/form-data">
-                                            <!-- multipart important pour uploads les image --->
-                                            @csrf
+                            <div class="container" style="margin-left: auto; margin-right:auto">
+
+                                <h4 class="card-title">Ajouter un vehicule</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    <form method="POST" action="{{url('vehicule')}}" enctype="multipart/form-data">
+                                        <!-- multipart important pour uploads les image --->
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-default" name="mark" placeholder="entrez la marque">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-rounded" name="model" placeholder="entrez le modèle">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label style="color: dark;">Image du véhicule</label>
+                                            <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-rounded" name="color" placeholder="entrez une couleur">
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" name="transmission">
+                                                <option selected="selected">Transmission</option>
+                                                <option value="Automatique">Automatique</option>
+                                                <option value="Manuel">Manuel </option>
+                                            </select>
                                             <div class="form-group">
-                                                <input type="text" class="form-control input-default" name="mark" placeholder="entrez la marque">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control input-rounded" name="model" placeholder="entrez le modèle">
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                                <label style="color: dark;">Image du véhicule</label>
-                                                    <input type="file" class="form-control input-rounded" name="vehicle_image" placeholder="entrez une photo">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control input-rounded" name="color" placeholder="entrez une couleur">
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="form-control form-control-lg" name="transmission">
-                                                    <option selected="selected">Transmission</option>
-                                                    <option value="automatique">Automatique</option>
-                                                    <option value="manuel">Manuel </option>
+                                                <select class="form-control form-control-lg" name="availability">
+                                                    <option selected="selected">Selectionner le status</option>
+                                                    <option value="Disponible">Disponible</option>
+                                                    <option value="Non disponible">Non disponible </option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix par heur">
+                                        </div>
+                                        <!-- fonction pour appeler une clé etrangere dans la table -->
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <select class="form-control form-control-lg" name="agence_id">
+                                                    <option selected="selected">Selectionner une agence</option>
+                                                    <!-- la boucle foreach permet de recuperer les elements dans un tableau -->
+                                                    @foreach ($agence as $agence)
+                                                    <option value="{{$agence->id}}">{{$agence->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="card-body">
                                                 <div class="form-group">
-                                                    <select class="form-control form-control-lg" name="availability">
-                                                        <option selected="selected">Selectionner le status</option>
-                                                        <option value="disponible">Disponible</option>
-                                                        <option value="non_disponible">Non disponible </option>
+                                                    <select class="form-control form-control-lg" name="type_vehicule">
+                                                        <option selected="selected">Selectionner un type</option>
+                                                        @foreach ($type_vehicule as $type_vehicule)
+                                                        <option value="{{$type_vehicule->name}}">{{$type_vehicule->name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="number" class="form-control input-rounded" name="price_per_hour" placeholder="entrez le prix par heur">
-                                            </div>
-                                            <!-- fonction pour appeler une clé etrangere dans la table -->                             
-                                                <div class="card-body">
-                                                    <div class="form-group">
-                                                        <select class="form-control form-control-lg" name="agence_id">
-                                                            <option selected="selected">Selectionner une agence</option>
-                                                            <!-- la boucle foreach permet de recuperer les elements dans un tableau -->
-                                                            @foreach ($agence as $agence)
-                                                            <option value="{{$agence->id}}">{{$agence->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="form-group">
-                                                            <select class="form-control form-control-lg" name="type_vehicule">
-                                                                <option selected="selected">Selectionner un type</option>
-                                                                @foreach ($type_vehicule as $type_vehicule)
-                                                                <option value="{{$type_vehicule->name}}">{{$type_vehicule->name}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <input type="text" value="{{ Auth::user()->id }}" name="user_id" style="display: none;">
-                                                        <button type="submit" class="btn btn-primary">Ajouter</button>
-                                        </form>
-                                    </div>
+                                                <input type="text" value="{{ Auth::user()->id }}" name="user_id" style="display: none;">
+                                                
+                                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                                    </form>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
+
+                </div>
             </div>
         </div>
         <!--**********************************

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Vehicule;
 use App\Models\TypeVehicule;
 use App\Models\Reservation;
+use App\Models\User;
 use App\Notifications\Approuver;
 use Illuminate\Http\Request;
 
@@ -14,13 +15,15 @@ class ResrvBookingController extends Controller
         $vehicules = Vehicule::all();
         $vehicules = Vehicule::find($id);
         $type_vehicule = TypeVehicule::find($id);
-        return view('acceuil.booking', compact('vehicules','type_vehicule'));
+        $user = User::find($id);
+        return view('acceuil.booking', compact('vehicules','type_vehicule','user'));
     }
 
     public function add_booking(Request $request)
     {
         $this->validate($request,[
             'id_vehile' => 'required',
+            'User' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',

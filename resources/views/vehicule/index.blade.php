@@ -186,7 +186,11 @@
                     </div> -->
                 </div>
 
-
+                <ul>
+                    @foreach ($errors->all() as $error )
+                    <li class="alert alert-danger">{{ $error }}</li>
+                    @endforeach
+                </ul>
 
 
                 @if(session('ajouter'))
@@ -302,7 +306,11 @@
                     </div>
 
 
-
+                    <!-- <a href="{{url('vehicule')}}">
+                        <button type="submit" class="btn btn-danger">
+                            Retour
+                        </button>
+                    </a> -->
 
                     <div class="row">
                         <div class="col-12">

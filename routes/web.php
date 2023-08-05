@@ -36,6 +36,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 //route pour importer le contenu de vehicule
+Route::controller(VoitureController::class)->prefix('/voiture')->group( function()
+{
+    Route::get('/{id}', 'show');
+});
+
+
 Route::get('/voiture', function () {
     return view('acceuil.voiture');
 });
@@ -51,12 +57,14 @@ Route::get('/contact', function () {
 Route::get('/detail', function () {
     return view('acceuil.detail');
 });
+
 //  Route::get('/booking', function () {
 //      return view('acceuil.booking');
 //  });
 
 
 Route::get('/dashboard',[DashboardController::class, 'afficher_dashboard'])->middleware(['auth','verified'])->name('dashboard');
+// Route::get('/historique',[HistoriqueController::class, 'historique_his']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

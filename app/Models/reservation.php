@@ -23,7 +23,21 @@ class reservation extends Model
     //         'status',
     // ];
     // protected $guarded = [];
-    // public function user(){
-    //     return $this->hasMany(User::class);
-    // }
+    public function user(){
+        return $this->hasMany(User::class);
+     }
+    public function vehicule(){
+        return $this->hasMany(Vehicule::class);
+     }
+
+
+     public function setStatusAttribute($value)
+     {
+        $this->attributes['status']=$value;
+
+        if($value == 'approuver')
+        {
+            $this->vehicule->update(['status'=> 'occupé']);
+        }
+     }
 }

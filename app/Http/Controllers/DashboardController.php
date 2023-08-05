@@ -15,4 +15,12 @@ class DashboardController extends Controller
     $approuver= Reservation::where('status','approuver')->count();
     return view('/dashboard',compact('vehicules','disponible','non_disponible','approuver'));
   }
+
+  public function historique_his()
+    {           
+
+            $user_id = auth()->id();
+            $reservations= reservation::where('User',$user_id)->where('status','En attente')->get();
+            return view('acceuil.historique', compact('reservations'));
+    }
 }

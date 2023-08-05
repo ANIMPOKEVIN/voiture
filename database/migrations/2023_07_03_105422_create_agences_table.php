@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('adress');
             $table->time('opening_time');
+            $table->time('close_time');
             $table->string('phone_number');
             $table->timestamps();
         });

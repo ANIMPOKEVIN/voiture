@@ -95,11 +95,12 @@
                                 <input type="text" name="status" value="En attente" style="display: none;">
                                 <input type="text" name="id_vehile" value="{{ $vehicules->id }}" style="display: none;">
                                 <input type="text" name="price_per_hour" id="prix" value="{{ $vehicules->price_per_hour }}" style="display: none;">
+                                <input type="text" name="User" id="" value="{{ Auth::user()->id }}" style="display: none;">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control p-4" name="first_name" placeholder="Nom" required="required">
+                                    <input type="text" class="form-control p-4" name="first_name" placeholder="Nom" value="{{Auth::User()->name}}" required="required">
                                 </div>
                                 <div class="col-6 form-group">
-                                    <input type="text" class="form-control p-4" name="last_name" placeholder="Prenom" required="required">
+                                    <input type="text" class="form-control p-4" name="last_name" placeholder="Prenom" value="{{Auth::User()->last_name}}" required="required">
                                 </div>
                             </div>
                             <div class="row">
@@ -122,11 +123,11 @@
                        
                             <div class="col-6 form-group">
                                 <label>Date de début</label>
-                                <input type="datetime-local"  class="form-control p-4" name="start_date" id="date1" onchange="calculer('heure')" placeholder="date de debut" required="required">
+                                <input type="datetime-local" min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="start_date" id="date1" onchange="calculer('heure')" placeholder="date de debut" required="required">
                             </div>
                             <div class="col-6 form-group">
                                 <label>Date de fin</label>
-                                <input type="datetime-local"  class="form-control p-4" name="end_date" id="date2" onchange="calculer('heure')" placeholder="date de fin" required="required">
+                                <input type="datetime-local"  min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="end_date" id="date2" onchange="calculer('heure')" placeholder="date de fin" required="required">
                             </div>
                         
                             <div class="col-6 form-group">
@@ -168,14 +169,23 @@
     <script language="javascript">
         function calculer(heure)
         {
-            var d1 = new Date(document.getElementById('date1').value) ;
-            var d2 = new Date(document.getElementById('date2').value) ;
-            var prix = parseInt(document.getElementById('prix').value) ;
+            var date1 = document.getElementById('date1').value ;
+            var date2 = document.getElementById('date2').value ;
 
-            var difftime =Math.abs(d2 - d1);
-           var differchehours= (difftime / (1000 * 60 * 60));
-           document.getElementById('heur').value = differchehours;
-           document.getElementById('total').value = differchehours * prix;
+            var d1 = new Date(date1);
+            var d2 = new Date(date2);
+            var prix = parseInt(document.getElementById('prix').value) ;
+            if(d2>=d1)
+         {
+        var difftime =Math.abs(d2 - d1);
+        var differchehours= (difftime / (1000 * 60 * 60));
+        document.getElementById('heur').value = differchehours;
+        document.getElementById('total').value = differchehours * prix;
+        }
+        if(d1>=d2)
+        {
+            alert("verifier les dates entrer")
+        }
         }
 
     </script>

@@ -199,8 +199,8 @@
                                         <div class="form-group">
                                         <select class="form-control form-control-lg" name="transmission">
                                                     <option selected="selected">Transmission</option>
-                                                    <option value="automatique">Automatique</option>
-                                                    <option value="manuel">Manuel </option>
+                                                    <option value="Automatique">Automatique</option>
+                                                    <option value="Manuel">Manuel </option>
                                                 </select>
                                         </div>
                                         <div class="form-group">
@@ -208,8 +208,8 @@
                                             <div class="form-group">
                                                      <select class="form-control form-control-lg" name="availability">
                                                         <option selected="selected">Selectionner le status</option>
-                                                        <option value="disponible">Disponible</option>
-                                                        <option value="non_disponible">Non disponible </option>
+                                                        <option value="Disponible">Disponible</option>
+                                                        <option value="Non Disponible">Non disponible </option>
                                                     </select>
                                             </div>
                                         </div>

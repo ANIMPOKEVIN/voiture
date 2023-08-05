@@ -13,7 +13,7 @@ class VoitureController extends Controller
     public function voiture()
     {
         //commande pour recuperer dans la base de donnees les vehicules qui ont uniquement le statut disponible
-        $voitures=Vehicule::where('availability', 'disponible', array())->get();
+        $voitures=Vehicule::all();
 
         return view('acceuil.voiture', compact('voitures'));
     }
@@ -41,7 +41,8 @@ class VoitureController extends Controller
      */
     public function show(string $id)
     {
-        //
+       $voitures = Vehicule::find($id);
+       return view('acceuil.show',compact('voitures'));
     }
 
     /**

@@ -78,7 +78,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="../" class="nav-item nav-link">Acceuil</a>
                         <a href="../" class="nav-item nav-link">A propos </a>
-                        <a href="../" class="nav-item nav-link">Service</a>
+                        <!-- <a href="../" class="nav-item nav-link">Service</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -89,7 +89,7 @@
                         <div class="nav-item dropdown">
                         
                         </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                        <!-- <a href="contact.html" class="nav-item nav-link active">Contact</a> -->
                     </div>
                 </div>
             </nav>

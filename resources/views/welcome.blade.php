@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -78,26 +78,25 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="../" class="nav-item nav-link active">Acceuil</a>
                         <a href="/about" class="nav-item nav-link">A propos </a>
-                        <a href="/service" class="nav-item nav-link">Service</a>
+                        <!-- <a href="/service" class="nav-item nav-link">Service</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicules</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>                           
+                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>
                             </div>
                         </div>
-                       
-                        <a href="/contact" class="nav-item nav-link">Contact</a>
+
+                        <!-- <a href="/contact" class="nav-item nav-link">Contact</a> -->
                          <a href="/profile" class="nav-item nav-link">profile</a>
-                        
                          <!-- le code suivant est executer si l'utilisateur est connecter et a la permission d'acceder au dashboard -->
-                         @if (auth()->check())            
+                         @if (auth()->check())
                          @if (Auth::User()->hasPermission('dashboard-bord'))
-                           <a href="/dashboard" class="nav-item nav-link">Dashbord</a> 
+                           <a href="/dashboard" class="nav-item nav-link">Dashbord</a>
                          @endif
                         @endif
-                        
-                        @guest                 
-                        <a href="/login" class="nav-item nav-link">Connexion</a> 
+
+                        @guest
+                        <a href="/login" class="nav-item nav-link">Connexion</a>
                         @endguest
                         <!-- se lien apparait si l'utilisateur n'est pas connecter -->
                         @guest
@@ -176,7 +175,7 @@
         </div>
     </div>
     <!-- About End -->
-    
+
 
     <!-- Services Start -->
     <div class="container-fluid py-5">
@@ -201,7 +200,7 @@
                             <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
                                 <i class="fa fa-2x fa-car text-secondary"></i>
                             </div>
-                
+
                             <h1 class="display-2 text-white mt-n2 m-0">02</h1>
                         </div>
                         <h4 class="text-uppercase mb-3">Nettoyage automatique</h4>
@@ -222,7 +221,9 @@
                     <h1 class="display-1 text-uppercase text-primary mb-4">50% OFF</h1>
                     <h1 class="text-uppercase text-light mb-4">Offre spéciale aux Nouveaux Membres</h1>
                     <!-- <p class="mb-4">Only for Sunday from 1st Jan to 30th Jan 2045</p> -->
-                    <a class="btn btn-primary mt-2 py-3 px-5" href="">S'inscrire Maintenant</a>
+                    @guest
+                    <a class="btn btn-primary mt-2 py-3 px-5" href="register">S'inscrire Maintenant</a>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -600,7 +601,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
         <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>

@@ -59,7 +59,7 @@
                         <!-- /# card -->
                     </div>
                     <!-- /# column -->
-                </div>
+                <!-- </div>
                     <div class="col-xl-12 col-xxl-6 col-lg-6 col-md-12">
                         <div class="row">
                             <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6 col-md-6">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>

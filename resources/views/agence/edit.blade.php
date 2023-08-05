@@ -195,6 +195,10 @@
                                                 <input type="time" class="form-control input-rounded"  value="{{$agence->opening_time}}" name="opening_time" placeholder="entrez l'heur d'ouverture">
                                             </div>
                                             <div class="form-group">
+                                            <label style="color: dark;">Heure de fermeture</label>
+                                                <input type="time" class="form-control input-rounded"  value="{{$agence->close_time}}" name="close_time" placeholder="entrez l'heur de fermeture">
+                                            </div>
+                                            <div class="form-group">
                                                 <input type="number" class="form-control input-rounded"  value="{{$agence->phone_number}}" name="phone_number" placeholder="entrez le numero de telephone">
                                             </div>
 

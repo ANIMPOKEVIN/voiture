@@ -47,7 +47,7 @@ class VehiculeController extends Controller
             'vehicle_image' => 'required',
             'transmission' => 'required',
             'availability' => 'required',
-            'price_per_hour' => 'required',
+            'price_per_hour' => ['required','numeric','min:0'],
             
             
         ]);
@@ -95,7 +95,7 @@ class VehiculeController extends Controller
             'vehicle_image' => 'required',
             'transmission' => 'required',
             'availability' => 'required',
-            'price_per_hour' => 'required',
+            'price_per_hour' => ['required','numeric','min:0'],
            
             
         ]);
