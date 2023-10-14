@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cars Rental</title>
+    <title>SEPTO SERVICE Sarl</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -31,7 +31,50 @@
 
 <body>
 
+<!-- Navbar Start -->
+<div class="container-fluid position-relative nav-bar p-0">
+        <div class="position-relative px-lg-5" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">SEPTO SERVICE Sarl</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="../" class="nav-item nav-link active">Acceuil</a>
+                        <a href="/about" class="nav-item nav-link">A propos </a>
+                        <!-- <a href="/service" class="nav-item nav-link">Service</a> -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicules</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>
+                            </div>
+                        </div>
 
+                        <!-- <a href="/contact" class="nav-item nav-link">Contact</a> -->
+                         <a href="/profile" class="nav-item nav-link">profile</a>
+                         <!-- le code suivant est executer si l'utilisateur est connecter et a la permission d'acceder au dashboard -->
+                         @if (auth()->check())
+                         @if (Auth::User()->hasPermission('dashboard-bord'))
+                           <a href="/dashboard" class="nav-item nav-link">Dashbord</a>
+                         @endif
+                        @endif
+
+                        @guest
+                        <a href="/login" class="nav-item nav-link">Connexion</a>
+                        @endguest
+                        <!-- se lien apparait si l'utilisateur n'est pas connecter -->
+                        @guest
+                        <a href="/register" class="nav-item nav-link">s'inscrire</a>
+                        @endguest
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
 
 
     <!-- Page Header Start -->
@@ -93,7 +136,7 @@
                             <div class="row">
 
                                 <input type="text" name="status" value="En attente" style="display: none;">
-                                <input type="text" name="id_vehile" value="{{ $vehicules->id }}" style="display: none;">
+                                <input type="text" name="id_vehicle" value="{{ $vehicules->id }}" style="display: none;">
                                 <input type="text" name="price_per_hour" id="prix" value="{{ $vehicules->price_per_hour }}" style="display: none;">
                                 <input type="text" name="User" id="" value="{{ Auth::user()->id }}" style="display: none;">
                                 <div class="col-md-6 form-group">
@@ -111,35 +154,35 @@
                                     <input type="number" class="form-control p-4" name="phone_number" placeholder="Numéro de téléphone" required="required">
                                 </div>
                             </div>
-                   
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" name="place_of_care" placeholder="Lieu de prise en charge" required="required">
+
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" name="place_of_care" placeholder="Lieu de prise en charge" required="required">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control p-4" name="place_of_deposit" placeholder="Lieu de depot" required="required">
+                                </div>
+
+
+                                <div class="col-6 form-group">
+                                    <label>Date de début</label>
+                                    <input type="datetime-local" min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="start_date" id="date1" onchange="calculer('heure')" placeholder="date de debut" required="required">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label>Date de fin</label>
+                                    <input type="datetime-local" min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="end_date" id="date2" onchange="calculer('heure')" placeholder="date de fin" required="required">
+                                </div>
+
+                                <div class="col-6 form-group">
+                                    <label>Nombre d'heure</label>
+                                    <input type="text" class="form-control p-4" id="heur" name="heur" placeholder="Nombre d'eure" required="required" readonly>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label>Prix total</label>
+                                    <input type="text" class="form-control p-4" id="total" name="prix" placeholder="Prix total" required="required" readonly>
+                                </div>
                             </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" name="place_of_deposit" placeholder="Lieu de depot" required="required">
-                            </div>
-                           
-                       
-                            <div class="col-6 form-group">
-                                <label>Date de début</label>
-                                <input type="datetime-local" min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="start_date" id="date1" onchange="calculer('heure')" placeholder="date de debut" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <label>Date de fin</label>
-                                <input type="datetime-local"  min="{{now()->format('Y-m-d\TH:i')}}" class="form-control p-4" name="end_date" id="date2" onchange="calculer('heure')" placeholder="date de fin" required="required">
-                            </div>
-                        
-                            <div class="col-6 form-group">
-                                <label>Nombre d'heure</label>
-                                <input type="text" class="form-control p-4" id="heur" name="heur" placeholder="Nombre d'eure" required="required" readonly>
-                            </div>
-                            <div class="col-6 form-group">
-                                <label>Prix total</label>
-                                <input type="text" class="form-control p-4" id="total" name="prix" placeholder="Prix total" required="required" readonly>
-                            </div>
-                        </div>
-                    </div>                 
+                    </div>
                 </div>
 
                 <div class="col-lg-4">
@@ -165,29 +208,25 @@
         </div>
     </div>
     <!-- Car Booking End -->
-            <!-- fonction javascript pour generer le prix total de la location du client -->
+    <!-- fonction javascript pour generer le prix total de la location du client -->
     <script language="javascript">
-        function calculer(heure)
-        {
-            var date1 = document.getElementById('date1').value ;
-            var date2 = document.getElementById('date2').value ;
+        function calculer(heure) {
+            var date1 = document.getElementById('date1').value;
+            var date2 = document.getElementById('date2').value;
 
             var d1 = new Date(date1);
             var d2 = new Date(date2);
-            var prix = parseInt(document.getElementById('prix').value) ;
-            if(d2>=d1)
-         {
-        var difftime =Math.abs(d2 - d1);
-        var differchehours= (difftime / (1000 * 60 * 60));
-        document.getElementById('heur').value = differchehours;
-        document.getElementById('total').value = differchehours * prix;
+            var prix = parseInt(document.getElementById('prix').value);
+            if (d2 >= d1) {
+                var difftime = Math.abs(d2 - d1);
+                var differchehours = (difftime / (1000 * 60 * 60));
+                document.getElementById('heur').value = differchehours;
+                document.getElementById('total').value = differchehours * prix;
+            }
+            if (d1 >= d2) {
+                alert("verifier les dates entrer")
+            }
         }
-        if(d1>=d2)
-        {
-            alert("verifier les dates entrer")
-        }
-        }
-
     </script>
 
     <!-- 
@@ -198,10 +237,10 @@
 
     <!-- Footer Start -->
 
-    <!-- <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
-        <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
-    </div> -->
+    <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
+        <p class="mb-2 text-center text-body">&copy; <a href="#">SEPTO SERVICE Sarl</a>. Tout Droit Reserver.</p>
+        <p class="m-0 text-center text-body">ANIMPO KEVIN </p>
+    </div>
     <!-- Footer End -->
 
 

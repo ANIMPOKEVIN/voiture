@@ -74,10 +74,10 @@ class ReservationController extends Controller
            
             'status' => 'required',
         ]);
-        $reservation = reservation::find($id);
+        $reservation = reservation::find($request->id);
         $reservation-> status = $request->status;
         $reservation->update();
-        return redirect('/reservation');
+        return redirect('reservation');
     }
 
     /**

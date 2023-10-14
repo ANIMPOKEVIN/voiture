@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cars Rental Admin </title>
+    <title>SEPTO SERVICE Sarl Admin </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -182,7 +182,7 @@
                                    <table class="table card-body">
                                     <thead>
                                         <th>id du véhicule</th>
-                                        <th>{{$reservation->id_vehile}}</th>
+                                        <th>{{$reservation->id_vehicle}}</th>
                                     </thead>
                                     <thead>
                                         <th>Nom</th>

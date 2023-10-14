@@ -26,18 +26,22 @@ class reservation extends Model
     public function user(){
         return $this->hasMany(User::class);
      }
-    public function vehicule(){
-        return $this->hasMany(Vehicule::class);
-     }
+    // public function vehicule(){
+    //     return $this->hasMany(Vehicule::class);
+    //  }
 
 
-     public function setStatusAttribute($value)
-     {
-        $this->attributes['status']=$value;
+    //  public function setStatusAttribute($value)
+    //  {
+    //     $this->attributes['status']=$value;
 
-        if($value == 'approuver')
-        {
-            $this->vehicule->update(['status'=> 'occupé']);
-        }
-     }
+    //     if($value == 'approuver')
+    //     {
+    //         $this->vehicule->update(['status'=> 'rejeter']);
+    //     }
+    //     else  if($value == 'rejeter')
+    //     {
+    //         $this->vehicule->update(['status'=> 'approuver']);
+    //     }
+    //  }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cars Rental Admin </title>
+    <title>SEPTO SERVICE Sarl Admin </title>
     <!-- Favicon icon -->
     <link rel="icon" type="{{asset('assets/image/png')}}" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <!-- Custom Stylesheet -->

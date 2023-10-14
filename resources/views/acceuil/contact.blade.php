@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cars Rental</title>
+    <title>SEPTO SERVICE Sarl</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -37,7 +37,7 @@
                 <div class="d-inline-flex align-items-center">
                     <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+237 654494500</a>
                     <span class="text-body">|</span>
-                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>Rental@gmail.com</a>
+                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>SEPTOSERVICE@gmail.com</a>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-right">

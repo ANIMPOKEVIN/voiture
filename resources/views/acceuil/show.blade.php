@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cars Rental</title>
+    <title>SEPTO SERVICE Sarl</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -32,7 +32,50 @@
 <body>
 
 
+<!-- Navbar Start -->
+<div class="container-fluid position-relative nav-bar p-0">
+        <div class="position-relative px-lg-5" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">SEPTO SERVICE Sarl</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="../" class="nav-item nav-link active">Acceuil</a>
+                        <a href="/about" class="nav-item nav-link">A propos </a>
+                        <!-- <a href="/service" class="nav-item nav-link">Service</a> -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicules</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="/voiture" class="dropdown-item">Liste Des Vehicules</a>
+                            </div>
+                        </div>
 
+                        <!-- <a href="/contact" class="nav-item nav-link">Contact</a> -->
+                         <a href="/profile" class="nav-item nav-link">profile</a>
+                         <!-- le code suivant est executer si l'utilisateur est connecter et a la permission d'acceder au dashboard -->
+                         @if (auth()->check())
+                         @if (Auth::User()->hasPermission('dashboard-bord'))
+                           <a href="/dashboard" class="nav-item nav-link">Dashbord</a>
+                         @endif
+                        @endif
+
+                        @guest
+                        <a href="/login" class="nav-item nav-link">Connexion</a>
+                        @endguest
+                        <!-- se lien apparait si l'utilisateur n'est pas connecter -->
+                        @guest
+                        <a href="/register" class="nav-item nav-link">s'inscrire</a>
+                        @endguest
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
@@ -99,10 +142,10 @@
 
     <!-- Footer Start -->
 
-    <!-- <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
-        <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
-    </div> -->
+    <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
+        <p class="mb-2 text-center text-body">&copy; <a href="#">SEPTO SERVICE Sarl</a>. Tout Droit Reserver.</p>
+        <p class="m-0 text-center text-body">ANIMPO KEVIN </p>
+    </div>
     <!-- Footer End -->
 
 

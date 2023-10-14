@@ -22,7 +22,7 @@ class ResrvBookingController extends Controller
     public function add_booking(Request $request)
     {
         $this->validate($request,[
-            'id_vehile' => 'required',
+            'id_vehicle' => 'required',
             'User' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',

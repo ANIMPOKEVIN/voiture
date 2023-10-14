@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cars Rental</title>
+    <title>SEPTO SERVICE Sarl</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -35,9 +35,9 @@
         <div class="row">
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</a>
+                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+237 699839916</a>
                     <span class="text-body">|</span>
-                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
+                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>SEPTOSERVICE@gmail.com</a>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-right">
@@ -65,36 +65,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="position-relative px-lg-5" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-uppercase text-primary mb-1">Cars Rental</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="../" class="nav-item nav-link">Acceuil</a>
-                        <a href="../" class="nav-item nav-link">A propos</a>
-                        <!-- <a href="service.html" class="nav-item nav-link active">Service</a> -->
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">vehicule</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="../" class="dropdown-item">Liste des vehicules</a>
-                                <!-- <a href="../booking" class="dropdown-item">reservation</a> -->
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                           
-                        </div>
-                        <!-- <a href="../" class="nav-item nav-link">Contact</a> -->
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+    
     <!-- Navbar End -->
 
 
@@ -123,7 +94,7 @@
                             </div>
                             <h1 class="display-2 text-white mt-n2 m-0">01</h1>
                         </div>
-                        <h4 class="text-uppercase mb-3">Car Rental</h4>
+                        <h4 class="text-uppercase mb-3">SEPTO SERVICE Sarl</h4>
                         <p class="m-0">Les services offert par le site permettent aux utilisateurs de louer differents types de véhicule</p>
                     </div>
                 </div>
@@ -183,9 +154,9 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-uppercase text-light mb-4">Contactez-nous</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-white mr-3"></i>Cameroun</p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-white mr-3"></i>+237654494500</p>
-                <p><i class="fa fa-envelope text-white mr-3"></i>Rental@gmail.com</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-white mr-3"></i>Douala,Cameroun</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-white mr-3"></i>+237 699839916</p>
+                <p><i class="fa fa-envelope text-white mr-3"></i>SEPTOSERVICE@gmail.com</p>
                 <h6 class="text-uppercase text-white py-2">Suivez-nous</h6>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-dark btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -206,7 +177,7 @@
         </div>
     </div>
     <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#">Cars Rental</a>. Tous droits reservés.</p>
+        <p class="mb-2 text-center text-body">&copy; <a href="#">SEPTO SERVICE Sarl</a>. Tous droits reservés.</p>
         <p class="m-0 text-center text-body">Designed by kevinAnimpo<a href="kevinAnimpo"></a></p>
     </div>
     <!-- Footer End -->
